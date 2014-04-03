@@ -1,0 +1,67 @@
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\NAOServer2.exe.config
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\NAOServer2.exe
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\NAOServer2.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\log4net.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\Microsoft.Scripting.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\naoqi-dotnet4.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\nunit.framework.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.Common.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.SocketBase.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.SocketEngine.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperWebSocket.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\WebSocket4Net.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\WinSCPnet.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\Microsoft.Scripting.xml
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\naoqi-dotnet4.xml
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.Common.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.Common.xml
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.SocketBase.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.SocketBase.xml
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.SocketEngine.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\SuperSocket.SocketEngine.xml
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\MainWindow.baml
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\MainWindow.g.cs
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\App.g.cs
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2_Content.g.cs
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2_MarkupCompile.cache
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.g.resources
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.Properties.Resources.resources
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.csproj.GenerateResource.Cache
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.exe
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.csprojResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\HTMLNaoServerTest.htm
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\jquery.js
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\NAOServer2.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\NAOServer2.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\bin\Debug\NAOServer2.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2_Content.g.cs
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2_MarkupCompile.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.g.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\bin\Debug\NAOServer2.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\NAOServer2.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\NAOServer2.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\bin\Debug\HTMLNaoServerTest.htm
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\bin\Debug\jquery.js
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\bin\Debug\NAOServer2.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\bin\Debug\NAOServer2.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\NAOServer2_Content.g.cs
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\NAOServer2_MarkupCompile.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\NAOServer2.g.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\NAOServer2.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\NAOServer2_20140223 - TransisiRedCoronaSocket\NAOServer2\obj\x86\Debug\GenerateResource.write.1.tlog

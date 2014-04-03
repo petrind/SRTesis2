@@ -1,0 +1,1 @@
+http://www.codeproject.com/Articles/22243/Real-Time-Object-Tracker-in-C

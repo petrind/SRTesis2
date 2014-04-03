@@ -1,0 +1,58 @@
+/Projects/FaceRecProOV/FaceRecProOV/bin/Debug/*.dll
+/Projects/FaceRecProOV/FaceRecProOV/*.dll
+/Projects/FaceRecProOV/FaceRecProOV/obj/x86/Debug/TempPE/*.dll
+/Projects/FaceRecProOV_20140223/FaceRecProOV/bin/Debug/*.dll
+/Projects/FaceRecProOV_20140223/FaceRecProOV/obj/x86/Debug/TempPE/*.dll
+/Projects/My Advanced EMGU Program x86/My Advanced EMGU Program/My EMGU Program/bin/Debug/*.dll
+/Projects/My Advanced EMGU Program x86/My Advanced EMGU Program/My EMGU Program/*.dll
+/Projects/My Simple EMGU Program x86/My Simple EMGU Program/My EMGU Program/bin/Debug/*.dll
+/Projects/My Simple EMGU Program x86/My Simple EMGU Program/My EMGU Program/bin/Debug/zh-CN/*.dll
+/Projects/My Simple EMGU Program x86/My Simple EMGU Program/My EMGU Program/*.dll
+/Projects/NAO_Camera_WPF-NAOCameraAndMotionController/WpfApplication1/bin/Debug/*.dll
+/Projects/NAO_Camera_WPF-NAOCameraAndMotionController/WpfApplication1/obj/x86/Debug/TempPE/*.dll
+/Projects/NAOCamera2/NAOCamera2/bin/x86/Debug/*.dll
+/Projects/NAOCamera2/NAOCamera2/obj/Debug/TempPE/*.dll
+/Projects/NAOCamera2/NAOCamera2/obj/x86/Debug/TempPE/*.dll
+/Projects/NAOServer2/NAOServer2/bin/Debug/*.dll
+/Projects/NAOServer2/NAOServer2/bin/Release/*.dll
+/Projects/NAOServer2/NAOServer2/obj/x86/Debug/TempPE/*.dll
+/Projects/NAOServer2/NAOServer2/obj/x86/Release/TempPE/*.dll
+/Projects/NAOServer2_20140223 - TransisiRedCoronaSocket/NAOServer2/bin/Debug/*.dll
+/Projects/NAOServer2_20140223 - TransisiRedCoronaSocket/NAOServer2/bin/Release/*.dll
+/Projects/NAOServer2_20140223 - TransisiRedCoronaSocket/NAOServer2/obj/x86/Debug/TempPE/*.dll
+/Projects/NAOServer2_20140223 - TransisiRedCoronaSocket/NAOServer2/obj/x86/Release/TempPE/*.dll
+/Projects/NAOServer2_20140225 - UsingRedCoronaSocket/NAOServer2/bin/Debug/*.dll
+/Projects/NAOServer2_20140225 - UsingRedCoronaSocket/NAOServer2/bin/Release/*.dll
+/Projects/NAOServer2_20140225 - UsingRedCoronaSocket/NAOServer2/obj/x86/Debug/TempPE/*.dll
+/Projects/NAOServer2_20140225 - UsingRedCoronaSocket/NAOServer2/obj/x86/Release/TempPE/*.dll
+/Projects/NAOTestTextToSpeech-GuessingNumberGame/NAOTestTextToSpeech/bin/Debug/*.dll
+/Projects/trackk/trackk/bin/Debug/*.dll
+/Projects/FaceRecProOV/FaceRecProOV/bin/Debug/*.exe
+/Projects/FaceRecProOV/FaceRecProOV/obj/x86/Debug/*.exe
+/Projects/FaceRecProOV_20140223/FaceRecProOV/bin/Debug/*.exe
+/Projects/FaceRecProOV_20140223/FaceRecProOV/obj/x86/Debug/*.exe
+/Projects/My Advanced EMGU Program x86/My Advanced EMGU Program/My EMGU Program/bin/Debug/*.exe
+/Projects/My Advanced EMGU Program x86/My Advanced EMGU Program/My EMGU Program/obj/x86/Debug/*.exe
+/Projects/My Simple EMGU Program x86/My Simple EMGU Program/My EMGU Program/bin/Debug/*.exe
+/Projects/My Simple EMGU Program x86/My Simple EMGU Program/My EMGU Program/obj/x86/Debug/*.exe
+/Projects/NAO_Camera_WPF-NAOCameraAndMotionController/WpfApplication1/bin/Debug/*.exe
+/Projects/NAO_Camera_WPF-NAOCameraAndMotionController/WpfApplication1/obj/x86/Debug/*.exe
+/Projects/NAOCamera2/NAOCamera2/bin/x86/Debug/*.exe
+/Projects/NAOCamera2/NAOCamera2/obj/x86/Debug/*.exe
+/Projects/NAOServer2/NAOServer2/bin/Debug/*.exe
+/Projects/NAOServer2/NAOServer2/bin/Release/*.exe
+/Projects/NAOServer2/NAOServer2/obj/x86/Debug/*.exe
+/Projects/NAOServer2/NAOServer2/obj/x86/Release/*.exe
+/Projects/NAOServer2_20140223 - TransisiRedCoronaSocket/NAOServer2/bin/Debug/*.exe
+/Projects/NAOServer2_20140223 - TransisiRedCoronaSocket/NAOServer2/bin/Release/*.exe
+/Projects/NAOServer2_20140223 - TransisiRedCoronaSocket/NAOServer2/obj/x86/Debug/*.exe
+/Projects/NAOServer2_20140223 - TransisiRedCoronaSocket/NAOServer2/obj/x86/Release/*.exe
+/Projects/NAOServer2_20140225 - UsingRedCoronaSocket/NAOServer2/bin/Debug/*.exe
+/Projects/NAOServer2_20140225 - UsingRedCoronaSocket/NAOServer2/bin/Release/*.exe
+/Projects/NAOServer2_20140225 - UsingRedCoronaSocket/NAOServer2/obj/x86/Debug/*.exe
+/Projects/NAOServer2_20140225 - UsingRedCoronaSocket/NAOServer2/obj/x86/Release/*.exe
+/Projects/NAOTestTextToSpeech-GuessingNumberGame/NAOTestTextToSpeech/bin/Debug/*.exe
+/Projects/NAOTestTextToSpeech-GuessingNumberGame/NAOTestTextToSpeech/obj/x86/Debug/*.exe
+/Projects/Real-Time Object Tracker in C++ Source/Real-Time Object Tracker in C++ Demo/bin/*.exe
+/Projects/trackk/trackk/bin/Debug/*.exe
+/Projects/trackk/trackk/obj/x86/Debug/*.exe

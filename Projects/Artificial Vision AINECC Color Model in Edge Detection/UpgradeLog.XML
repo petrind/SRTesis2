@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ainecc_rv1">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Artificial Vision AINECC Color Model in Edge Detection\ainecc_rv1.sln">
+</Property><Property Name="Date" Value="08 Maret 2014">
+</Property><Property Name="Time" Value="12:04">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="ainecc_rv1.sln" Description="File successfully backed up as C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Artificial Vision AINECC Color Model in Edge Detection\ainecc_rv1.sln.old">
+</Event><Event ErrorLevel="0" Project="ainecc_rv1" Source="ainecc_rv1\ainecc_rv1.vcproj" Description="Converting project file 'C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Artificial Vision AINECC Color Model in Edge Detection\ainecc_rv1\ainecc_rv1.vcproj'.">
+</Event><Event ErrorLevel="1" Project="ainecc_rv1" Source="ainecc_rv1\ainecc_rv1.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="ainecc_rv1" Source="ainecc_rv1\ainecc_rv1.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="ainecc_rv1" Source="ainecc_rv1\ainecc_rv1.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="0" Project="ainecc_rv1" Source="ainecc_rv1\ainecc_rv1.vcproj" Description="Done converting to new project file 'C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Artificial Vision AINECC Color Model in Edge Detection\ainecc_rv1\ainecc_rv1.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="ainecc_rv1" Source="ainecc_rv1\ainecc_rv1.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ainecc_rv1.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="ainecc_rv1.sln" Description="Converted">
+</Event></UpgradeLog>

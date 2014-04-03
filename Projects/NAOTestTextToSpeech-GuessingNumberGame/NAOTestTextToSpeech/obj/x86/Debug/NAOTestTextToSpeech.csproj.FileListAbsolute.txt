@@ -1,0 +1,7 @@
+c:\users\user\documents\visual studio 2010\Projects\NAOTestTextToSpeech\NAOTestTextToSpeech\bin\Debug\NAOTestTextToSpeech.exe
+c:\users\user\documents\visual studio 2010\Projects\NAOTestTextToSpeech\NAOTestTextToSpeech\bin\Debug\NAOTestTextToSpeech.pdb
+c:\users\user\documents\visual studio 2010\Projects\NAOTestTextToSpeech\NAOTestTextToSpeech\bin\Debug\naoqi-dotnet4.dll
+c:\users\user\documents\visual studio 2010\Projects\NAOTestTextToSpeech\NAOTestTextToSpeech\bin\Debug\naoqi-dotnet4.xml
+c:\users\user\documents\visual studio 2010\Projects\NAOTestTextToSpeech\NAOTestTextToSpeech\obj\x86\Debug\NAOTestTextToSpeech.exe
+c:\users\user\documents\visual studio 2010\Projects\NAOTestTextToSpeech\NAOTestTextToSpeech\obj\x86\Debug\NAOTestTextToSpeech.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\NAOTestTextToSpeech\NAOTestTextToSpeech\obj\x86\Debug\NAOTestTextToSpeech.csprojResolveAssemblyReference.cache

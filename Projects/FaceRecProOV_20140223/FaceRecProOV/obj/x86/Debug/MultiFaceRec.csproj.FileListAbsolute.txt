@@ -1,0 +1,143 @@
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\bin\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\bin\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\obj\x86\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\MultiFaceRec\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\obj\x86\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\Emgu.CV.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\Emgu.Util.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\ZedGraph.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\Emgu.CV.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\bin\Debug\Emgu.Util.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\FaceRecPro\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\Emgu.CV.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\Emgu.Util.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\ZedGraph.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\Emgu.CV.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\bin\Debug\Emgu.Util.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\obj\x86\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\obj\x86\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\Emgu.CV.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\Emgu.Util.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\ZedGraph.dll
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\Emgu.CV.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\bin\Debug\Emgu.Util.xml
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Sergio Gutiérrez\Documents\FaceRecPro - copia\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\obj\x86\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\bin\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\bin\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\bin\Debug\Emgu.CV.xml
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\bin\Debug\Emgu.Util.xml
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecPro\FaceRecPro\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.exe
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.pdb
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.CV.xml
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.Util.xml
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Sergio Gutiérrez\Desktop\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.exe
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.pdb
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.exe
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.pdb
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.CV.xml
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.CV.UI.xml
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.Util.xml
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.exe.config
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\log4net.dll
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\Newtonsoft.Json.dll
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.Common.dll
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketBase.dll
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketEngine.dll
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperWebSocket.dll
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.Common.pdb
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.Common.xml
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketBase.pdb
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketBase.xml
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketEngine.pdb
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketEngine.xml
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperWebSocket.pdb
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\SuperWebSocket.xml
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\HtmlAgilityPack.dll
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\HtmlAgilityPack.pdb
+D:\Petrus 087823686975 23212351\Kuliah\S2\Tesis\FaceRecProOV\FaceRecProOV\bin\Debug\HtmlAgilityPack.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.CV.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.CV.UI.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\Emgu.Util.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\HtmlAgilityPack.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\HtmlAgilityPack.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.Common.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.Common.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketBase.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketBase.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketEngine.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\SuperSocket.SocketEngine.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\SuperWebSocket.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\SuperWebSocket.xml
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\NAOImageStringBase64.htm
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\loading.jpg
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\jquery.js
