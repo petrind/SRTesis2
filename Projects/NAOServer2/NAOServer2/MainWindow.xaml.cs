@@ -213,29 +213,29 @@ namespace NAOserver
                             imageBytes = null;
                         }
                         //commented to make broadcast raw data
-                        //if (imageBytes != null) // if the image isnt empty create a bitmap and send via websocket 
-                        //    imageBitmap = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageBytes, currentFormat.width * 3); 
-                        //else
-                        //    imageBitmap = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
-                        //frame = BitmapFrame.Create(imageBitmap); 
+                        if (imageBytes != null) // if the image isnt empty create a bitmap and send via websocket 
+                            imageBitmap = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageBytes, currentFormat.width * 3); 
+                        else
+                            imageBitmap = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
+                        frame = BitmapFrame.Create(imageBitmap); 
  
                         // converts bitmap frames to jpg 
-                        //JpegBitmapEncoder converter = new JpegBitmapEncoder(); 
+                        JpegBitmapEncoder converter = new JpegBitmapEncoder(); 
  
-                        //converter.Frames.Add(frame); 
+                        converter.Frames.Add(frame); 
  
                         // memory stream to save jpg to byte array 
-                        //MemoryStream ms = new MemoryStream(); 
+                        MemoryStream ms = new MemoryStream(); 
  
-                        //converter.Save(ms);
-                        //byte[] bytes=null;
-                        //ms.Close(); 
-                        //if (ss.getClientCount()>0 || sessionList.Count>0)
-                        //bytes = ms.ToArray();
+                        converter.Save(ms);
+                        byte[] bytes = null;
+                        ms.Close();
+                        if (ss.getClientCount() > 0 || sessionList.Count > 0)
+                            bytes = ms.ToArray();
 
                         if (ss.getClientCount()>0)
-                            //ss.BroadcastImage(bytes); //broadcast jpg
-                            ss.BroadcastImage(imageBytes); //broadcast raw
+                            ss.BroadcastImage(bytes); //broadcast jpg
+                            //ss.BroadcastImage(imageBytes); //broadcast raw
 
                         // since html can convert base64strings to images, convert the image to a base64 string 
                         //if (sessionList.Count>0)

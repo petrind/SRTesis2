@@ -24,9 +24,13 @@ namespace MultiFaceRec
         public SignDetector(Image<Bgr, Byte> stopSignModel)
         {
             _detector2 = new SURFDetector(500, false);
-            using (Image<Gray, Byte> redMask = GetRedPixelMask(stopSignModel))
+            using (Image<Gray, Byte> redMask = GetColorPixelMask(stopSignModel))
             {
-                _tracker2 = new Features2DTracker<float>(_detector2.DetectFeatures(redMask, null));
+                try
+                {
+                    _tracker2 = new Features2DTracker<float>(_detector2.DetectFeatures(redMask, null));
+                }
+                catch { }
             }
             _octagonStorage2 = new MemStorage();
             _octagon2 = new Contour<Point>(_octagonStorage2);
@@ -48,27 +52,40 @@ namespace MultiFaceRec
         /// </summary>
         /// <param name="image">The color image to find red mask from</param>
         /// <returns>The red pixel mask</returns>
-        private static Image<Gray, Byte> GetRedPixelMask(Image<Bgr, byte> image)
+        private static Image<Gray, Byte> GetColorPixelMask(Image<Bgr, byte> image)
         {
             using (Image<Hsv, Byte> hsv = image.Convert<Hsv, Byte>())
             {
                 Image<Gray, Byte>[] channels = hsv.Split();
+                
 
                 try
                 {
+                    
                     //channels[0] is the mask for hue less than 20 or larger than 160
-                    CvInvoke.cvInRangeS(channels[0], new MCvScalar(20), new MCvScalar(160), channels[0]);
-                    channels[0]._Not();
+                    //red
+                    //CvInvoke.cvInRangeS(channels[0], new MCvScalar(10), new MCvScalar(170), channels[0]);
+                    //channels[0]._Not();
+                    //blue
+                    CvInvoke.cvInRangeS(channels[0], new MCvScalar(45), new MCvScalar(75), channels[0]);
 
+                    CvInvoke.cvShowImage("channel 0", channels[0]);
                     //channels[1] is the mask for satuation of at least 10, this is mainly used to filter out white pixels
                     channels[1]._ThresholdBinary(new Gray(10), new Gray(255.0));
-
+                    //channels[2]._ThresholdBinary(new Gray(90), new Gray(255.0));
+                    
                     CvInvoke.cvAnd(channels[0], channels[1], channels[0], IntPtr.Zero);
+                    //CvInvoke.cvAnd(channels[0], channels[2], channels[0], IntPtr.Zero);
+                    
                 }
                 finally
                 {
+                    
+                    CvInvoke.cvShowImage("channel 1", channels[1]);
+                    CvInvoke.cvShowImage("channel 2", channels[2]);
                     channels[1].Dispose();
                     channels[2].Dispose();
+                    //channels[0].Dispose();
                 }
                 return channels[0];
             }
@@ -78,7 +95,7 @@ namespace MultiFaceRec
         {
             for (; contours != null; contours = contours.HNext)
             {
-                contours.ApproxPoly(contours.Perimeter * 0.02, 0, contours.Storage);
+                //contours.ApproxPoly(contours.Perimeter * 0.02, 0, contours.Storage);
                 if (contours.Area > 200)
                 {
                     double ratio = CvInvoke.cvMatchShapes(_octagon2, contours, Emgu.CV.CvEnum.CONTOURS_MATCH_TYPE.CV_CONTOURS_MATCH_I3, 0);
@@ -92,6 +109,7 @@ namespace MultiFaceRec
                     }
 
                     Rectangle box = contours.BoundingRectangle;
+                    
                     
                     Image<Gray, Byte> candidate;
                     using (Image<Bgr, Byte> tmp = img.Copy(box))
@@ -119,10 +137,12 @@ namespace MultiFaceRec
 
                     if (goodMatchCount >= 10)
                     {
-                        imageGray.Draw(contours, new Gray(150), 2);
+                        //imageGray.Draw(contours, new Gray(150), 2);
                         imagecolor.Draw(contours, new Bgr(255,0,0), 2);
                         areas.Add(contours.Area);
-                        boxList.Add(box);
+                        boxList.Add(box);                                                
+
+                        imageGray.Draw(contours.GetConvexHull(Emgu.CV.CvEnum.ORIENTATION.CV_CLOCKWISE), new Gray(150), 2);
                         stopSignList.Add(candidate);
                     }
                 }
@@ -134,12 +154,12 @@ namespace MultiFaceRec
             imagecolor = img;
             areas.Clear();
             Image<Bgr, Byte> smoothImg = img.SmoothGaussian(5, 5, 1.5, 1.5);
-            Image<Gray, Byte> smoothedRedMask = GetRedPixelMask(smoothImg);
+            Image<Gray, Byte> smoothedRedMask = GetColorPixelMask(smoothImg);
             imageGray = smoothedRedMask;
 
             //Use Dilate followed by Erode to eliminate small gaps in some countour.
-            smoothedRedMask._Dilate(1);
-            smoothedRedMask._Erode(1);
+            //smoothedRedMask._Dilate(1);
+            //smoothedRedMask._Erode(1);
 
             using (Image<Gray, Byte> canny = smoothedRedMask.Canny(new Gray(100), new Gray(50)))//Canny(100,50))
             using (MemStorage stor = new MemStorage())

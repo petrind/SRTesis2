@@ -787,11 +787,11 @@ namespace RedCorona.Net
             if (useSocks) sock = ConnectToSocksProxy(proxy.host, proxy.port, address, port, proxy.username, proxy.password);
             else
             {
-#if NET_1_1
+                //#if NET_1_1 //commented because Dns.GetHostEntry(address) no such host is known
                 IPAddress host = Dns.GetHostByName(address).AddressList[0];
-#else
-                IPAddress host = Dns.GetHostEntry(address).AddressList[0];
-#endif
+//#else
+  //              IPAddress host = Dns.GetHostEntry(address).AddressList[0];
+//#endif
                 sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 sock.Connect(new IPEndPoint(host, port));
             }

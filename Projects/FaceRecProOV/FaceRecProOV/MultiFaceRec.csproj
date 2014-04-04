@@ -272,6 +272,9 @@
     <Content Include="opencv_videostab240.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\ImageStop\hexagon.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\loading.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

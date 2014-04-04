@@ -32,3 +32,14 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\trackk\trackk\bin\Debug\trackk.pdb
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\trackk\trackk\obj\x86\Debug\trackk.exe
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\trackk\trackk\obj\x86\Debug\trackk.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\bin\Debug\HTMLNaoServerTest.htm
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\bin\Debug\jquery.js
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\bin\Debug\trackk.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\bin\Debug\trackk.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\obj\x86\Debug\trackk.f21.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\obj\x86\Debug\trackk.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\obj\x86\Debug\trackk.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\trackk\trackk\obj\x86\Debug\trackk.pdb

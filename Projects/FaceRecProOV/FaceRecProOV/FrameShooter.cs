@@ -77,7 +77,7 @@ namespace MultiFaceRec
             {
                 mc = new MessageClientFaceRecognition();
                 curDir = Directory.GetCurrentDirectory();
-                img2 = Image.FromFile(String.Format("{0}/Resources/ImageStop/StopSignNorthAmerican.png", Directory.GetCurrentDirectory()));
+                img2 = Image.FromFile(String.Format("{0}/Resources/ImageStop/hexagon.png", Directory.GetCurrentDirectory()));
                 stopDetector = new SignDetector(new Image<Bgr, byte>(new Bitmap(img2)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC));                                
             }
             catch (Exception e)
@@ -133,10 +133,11 @@ namespace MultiFaceRec
                 {
                     while (!mc.updated)
                     { }
-                    BitmapSource imageBitmap = BitmapSource.Create(320, 240, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, mc.getByte(), 320* 3); 
-                    //img = Image.FromStream(new MemoryStream(mc.getByte()));
-                    //currentFrame = new Image<Bgr, byte>(new Bitmap(img)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                    currentFrame = new Image<Bgr, byte>(BitmapFromSource(imageBitmap)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                    //BitmapSource imageBitmap = BitmapSource.Create(320, 240, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, mc.getByte(), 320* 3); 
+                    //currentFrame = new Image<Bgr, byte>(BitmapFromSource(imageBitmap)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                    img = Image.FromStream(new MemoryStream(mc.getByte()));
+                    currentFrame = new Image<Bgr, byte>(new Bitmap(img)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                    
                 }
                 catch (Exception ex)
                 {
@@ -300,7 +301,11 @@ namespace MultiFaceRec
                 Directory.CreateDirectory(dirSave);
             }
             int fileCount = Directory.GetFiles(dirSave).Length;
-            TrainedFace.Save(dirSave + "/area-"+area.Text+" - " + fileCount.ToString()+".bmp");
+            try
+            {
+                TrainedFace.Save(dirSave + "/" + fileCount.ToString() + " - area-" + area.Text + ".bmp");
+            }
+            catch { }
 
             //before your loop
             var csv = new StringBuilder();
