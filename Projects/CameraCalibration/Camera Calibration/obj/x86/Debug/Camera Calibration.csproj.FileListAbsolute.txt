@@ -1,0 +1,54 @@
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\Camera Calibration.exe
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\Camera Calibration.pdb
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\Emgu.CV.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\Emgu.CV.UI.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\Emgu.Util.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\obj\x86\Debug\Camera_Calibration.Form1.resources
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\obj\x86\Debug\Camera_Calibration.Properties.Resources.resources
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\obj\x86\Debug\GenerateResource.write.1.tlog
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\obj\x86\Debug\Camera Calibration.exe
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\obj\x86\Debug\Camera Calibration.pdb
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\cublas64_42_9.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\cudart64_42_9.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\cufft64_42_9.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\cvextern.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\npp64_42_9.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_calib3d242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_contrib242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_core242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_features2d242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_ffmpeg242_64.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_flann242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_gpu242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_highgui242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_imgproc242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_legacy242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_ml242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_nonfree242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_objdetect242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_photo242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_stitching242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_video242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Camera Calibration\Camera Calibration\bin\Debug\opencv_videostab242.dll
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\CameraCalibration\Camera Calibration\obj\x86\Debug\Camera Calibration.exe
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\CameraCalibration\Camera Calibration\obj\x86\Debug\Camera Calibration.pdb
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\bin\Camera Calibration.exe
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\bin\Camera Calibration.pdb
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\CameraCalibration\Camera Calibration\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\CameraCalibration\Camera Calibration\obj\x86\Debug\Camera_Calibration.Form1.resources
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\CameraCalibration\Camera Calibration\obj\x86\Debug\Camera_Calibration.Properties.Resources.resources
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\CameraCalibration\Camera Calibration\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\Emgu.CV.Example\CameraCalibration\Camera Calibration\obj\x86\Debug\GenerateResource.write.1.tlog
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\bin\Camera Calibration.exe
+H:\Live Mesh\Visual Studio 2010\Projects\Examples\EMGU x64\bin\Camera Calibration.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\CameraCalibration\Camera Calibration\obj\x86\Debug\Camera Calibration.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\CameraCalibration\Camera Calibration\obj\x86\Debug\Camera Calibration.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\bin\Camera Calibration.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\bin\Camera Calibration.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\CameraCalibration\Camera Calibration\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\CameraCalibration\Camera Calibration\obj\x86\Debug\Camera_Calibration.Form1.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\CameraCalibration\Camera Calibration\obj\x86\Debug\Camera_Calibration.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\CameraCalibration\Camera Calibration\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\CameraCalibration\Camera Calibration\obj\x86\Debug\GenerateResource.write.1.tlog

@@ -9,7 +9,9 @@ using System.IO;
 using System.Windows; 
 using System.ComponentModel; 
 using Aldebaran.Proxies; 
-using WinSCP; 
+using WinSCP;
+using NAOServer2.ServiceReference1;
+
  
 namespace NAO_Camera_WPF 
 { 
@@ -17,7 +19,8 @@ namespace NAO_Camera_WPF
     { 
         // Needed proxies 
         private AudioDeviceProxy audio = null; 
-        private TextToSpeechProxy tts = null; 
+        private TextToSpeechProxy tts = null;
+        private MemoryProxy mem = null;
  
         // Worker to download files in the background 
         private BackgroundWorker bgWorker = new BackgroundWorker(); 
@@ -42,7 +45,8 @@ namespace NAO_Camera_WPF
             { 
                 ipString = ip; 
                 audio = new AudioDeviceProxy(ip, 9559); 
-                tts = new TextToSpeechProxy(ip, 9559); 
+                tts = new TextToSpeechProxy(ip, 9559);
+                mem = new MemoryProxy(ip, 9559);
             } 
             catch (Exception e) 
             { 
@@ -117,8 +121,12 @@ e.ToString());
         { 
             if (tts != null) 
             { 
-                tts.say(sentence); 
+                //tts.say(sentence);
+                
+                var service = new Service1Client();
+                service.SetPersonName(sentence);
                 //MessageBox.Show("Message sent successfully!"); 
+                
             } 
         } 
  

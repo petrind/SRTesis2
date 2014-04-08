@@ -21,11 +21,14 @@ namespace NAO_Camera_WPF
         public int width; 
         public int height; 
     } 
+    
  
     public class Camera 
     { 
-        public VideoDeviceProxy naoCamera = null; 
- 
+        public VideoDeviceProxy naoCameraUpper = null;
+        public VideoDeviceProxy naoCameraLower = null;
+        string subsNameUpper = "NAO Camera Upper";
+        string subsNameBottom= "NAO Camera Bottom";
         public List<NaoCamImageFormat> NaoCamImageFormats = new 
 List<NaoCamImageFormat>(); 
  
@@ -76,30 +79,35 @@ List<NaoCamImageFormat>();
         { 
             try 
             { 
-                if (naoCamera != null) 
+                if (naoCameraUpper != null || naoCameraLower !=null) 
                 { 
                     Disconnect(); 
                 } 
  
-                naoCamera = new VideoDeviceProxy(ip, 9559); 
+                naoCameraUpper = new VideoDeviceProxy(ip, 9559);
+                naoCameraLower = new VideoDeviceProxy(ip, 9559);
  
                 // Attempt to unsubscribe incase program was not shut down properly 
                 try 
-                { 
-                    naoCamera.unsubscribe("NAO Camera"); 
+                {
+                    naoCameraUpper.unsubscribe(subsNameUpper);
+                    naoCameraLower.unsubscribe(subsNameBottom);
                 } 
                 catch (Exception) 
                 { 
-                } 
- 
+                }
+                
                 // subscribe to NAO Camera for easier access to camera memory 
-                naoCamera.subscribe("NAO Camera", format.id, ColorSpace, FPS); 
+                naoCameraUpper.subscribe(subsNameUpper, format.id, ColorSpace, FPS);
+                naoCameraLower.subscribe(subsNameBottom, format.id, ColorSpace, FPS);
+                SetCamera();
             } 
             catch (Exception e) 
             { 
                 // display error message and write exceptions to a file 
                 MessageBox.Show("Exception occurred in naocam connect, error log in C:\\NAOserver\\exception.txt"); 
-                naoCamera = null; 
+                naoCameraUpper = null;
+                naoCameraLower = null;
                 System.IO.File.WriteAllText(@"C:\\NAOserver\\exception.txt",e.ToString()); 
             } 
         } 
@@ -111,38 +119,69 @@ List<NaoCamImageFormat>();
         { 
             try 
             { 
-                if (naoCamera != null) 
+                if (naoCameraUpper != null || naoCameraLower!=null) 
                 { 
                     // unsubscribe so the NAO knows we do not need data from the camera anymore 
-                    naoCamera.unsubscribe("NAO Camera"); 
+                    naoCameraUpper.unsubscribe(subsNameUpper);
+                    naoCameraLower.unsubscribe(subsNameBottom); 
                 } 
             } 
             catch 
             {  } 
  
-            naoCamera = null; 
-        } 
- 
+            naoCameraUpper = null;
+            naoCameraLower = null;
+        }
+        /// <summary>
+        /// Change to Bottom Cam
+        /// </summary>
+        public void SetCamera()
+        {
+            naoCameraUpper.setCameraParameter(subsNameUpper, 18, 0);
+            naoCameraLower.setCameraParameter(subsNameUpper, 18, 1);
+        }
+        
+
         /// <summary> 
         /// Gets an image from the camera 
         /// </summary> 
         /// <returns> single frame from the camera </returns> 
-        public byte[] getImage() 
+        public byte[] getImageUpper() 
         { 
             byte[] image = new byte[0]; 
  
             try 
             { 
-                if (naoCamera != null) 
-                { 
-                    Object imageObject = naoCamera.getImageRemote("NAO Camera"); 
+                if (naoCameraUpper != null) 
+                {
+                    Object imageObject = naoCameraUpper.getImageRemote(subsNameUpper); 
                     image = (byte[])((ArrayList)imageObject)[6]; 
                 } 
             } 
             catch (Exception) 
             { } 
             return image; 
-        } 
+        }
+        /// <summary> 
+        /// Gets an image from the camera 
+        /// </summary> 
+        /// <returns> single frame from the camera </returns> 
+        public byte[] getImageLower()
+        {
+            byte[] image = new byte[0];
+
+            try
+            {
+                if (naoCameraLower != null)
+                {
+                    Object imageObject = naoCameraLower.getImageRemote(subsNameBottom);
+                    image = (byte[])((ArrayList)imageObject)[6];
+                }
+            }
+            catch (Exception)
+            { }
+            return image;
+        }
     } 
 } 
  

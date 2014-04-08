@@ -71,8 +71,9 @@ namespace RedCorona.Net
     public class ClientInfo
     {
         //code for scoket
-        public static uint ImageCode = 0x00000001,
-            StringCode = 0x00000002,
+        public static uint ImageCodeUpper = 0x00000010,
+            ImageCodeLower = 0x00000011,
+            StringCode = 0x00000020,
             CommandCode = 0x00000100,
             VoiceCode = 0x00000200;
         //code for Command

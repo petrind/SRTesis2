@@ -50,8 +50,7 @@ namespace NAOserver
         private bool isNaoConnect = false;
         private bool isAppServerStart = false;
         private NaoCamImageFormat currentFormat; 
-        private BitmapSource imageBitmap; 
-        private BitmapFrame frame; 
+        
         private static String imageString = ""; 
         private static List<WebSocketSession> sessionList = new List<WebSocketSession>(); 
         private static float yaw; 
@@ -185,7 +184,12 @@ namespace NAOserver
         private void bitmapReady(object sender, EventArgs e) 
         {
             
-            byte[] imageBytes=null;
+            byte[] imageUpperBytes=null;
+            byte[] imageLowerBytes = null;
+            BitmapSource imageBitmapUpper;
+            BitmapSource imageBitmapLower;
+            BitmapFrame frameUpper;
+            BitmapFrame frameLower;
             // check for websocket sessions if none exist nothing needs to be done 
             if (true)//sessionList.Count > 0)  
             { 
@@ -199,7 +203,8 @@ namespace NAOserver
                         {
                             try
                             {
-                                imageBytes = naoCam.getImage(); // store an image in imageBytes 
+                                imageUpperBytes = naoCam.getImageUpper(); // store an image in imageBytes 
+                                imageLowerBytes = naoCam.getImageLower();
                             }
                             catch (Exception ex)
                             {
@@ -210,32 +215,51 @@ namespace NAOserver
                         }
                         else
                         {
-                            imageBytes = null;
+                            imageUpperBytes = null;
+                            imageLowerBytes = null;
                         }
                         //commented to make broadcast raw data
-                        if (imageBytes != null) // if the image isnt empty create a bitmap and send via websocket 
-                            imageBitmap = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageBytes, currentFormat.width * 3); 
+                        if (imageUpperBytes != null) // if the image isnt empty create a bitmap and send via websocket 
+                            imageBitmapUpper = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageUpperBytes, currentFormat.width * 3); 
                         else
-                            imageBitmap = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
-                        frame = BitmapFrame.Create(imageBitmap); 
+                            imageBitmapUpper = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
+                        //lower image handler
+                        if (imageLowerBytes != null) // if the image isnt empty create a bitmap and send via websocket 
+                            imageBitmapLower = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageLowerBytes, currentFormat.width * 3);
+                        else
+                            imageBitmapLower = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
+                        
+                        frameUpper = BitmapFrame.Create(imageBitmapUpper);
+                        frameLower = BitmapFrame.Create(imageBitmapLower);
  
                         // converts bitmap frames to jpg 
-                        JpegBitmapEncoder converter = new JpegBitmapEncoder(); 
+                        JpegBitmapEncoder converterUpper = new JpegBitmapEncoder();
+                        JpegBitmapEncoder converterLower = new JpegBitmapEncoder();
  
-                        converter.Frames.Add(frame); 
+                        converterUpper.Frames.Add(frameUpper);
+                        converterLower.Frames.Add(frameLower);
  
                         // memory stream to save jpg to byte array 
-                        MemoryStream ms = new MemoryStream(); 
+                        MemoryStream msu = new MemoryStream();
+                        MemoryStream msl = new MemoryStream();
  
-                        converter.Save(ms);
-                        byte[] bytes = null;
-                        ms.Close();
+                        converterUpper.Save(msu);
+                        converterLower.Save(msl);
+                        byte[] bytesU = null;
+                        byte[] bytesL = null;
+                        msu.Close();
                         if (ss.getClientCount() > 0 || sessionList.Count > 0)
-                            bytes = ms.ToArray();
+                        {
+                            bytesU = msu.ToArray();
+                            bytesL = msl.ToArray();
+                        }
 
-                        if (ss.getClientCount()>0)
-                            ss.BroadcastImage(bytes); //broadcast jpg
+                        if (ss.getClientCount() > 0)
+                        {
+                            ss.BroadcastByte(bytesU,0); //broadcast jpg
+                            ss.BroadcastByte(bytesL, 1);
                             //ss.BroadcastImage(imageBytes); //broadcast raw
+                        }
 
                         // since html can convert base64strings to images, convert the image to a base64 string 
                         //if (sessionList.Count>0)
@@ -407,11 +431,11 @@ namespace NAOserver
             {
                 // connect to the NAO Motion API 
                 naoCam.connect(ipBox.Text, currentFormat, COLOR_SPACE, FPS);
-                if (naoCam.naoCamera == null)
+                if (naoCam.naoCameraUpper == null)
                     return;
                 naoMotion.connect(ipBox.Text);
                 naoAudio.connect(ipBox.Text);
-                if (naoCam.naoCamera != null)
+                if (naoCam.naoCameraUpper != null)
                     isNaoConnect = true;
             }
             catch (Exception ex)
@@ -511,9 +535,22 @@ namespace NAOserver
             {
                 server.BroadcastMessage(ClientInfo.StringCode, Encoding.UTF8.GetBytes(text));
             }
-            public void BroadcastImage(byte[] b)
+            /// <summary>
+            /// Broadcast Image
+            /// </summary>
+            /// <param name="b">byte to be broadcast</param>
+            /// <param name="i">0=upper, 1 lower, other number still in progress</param>
+            public void BroadcastByte(byte[] b,int i)
             {
-                server.BroadcastMessage(ClientInfo.ImageCode, b);
+                switch (i)
+                {
+                    case 0:
+                        server.BroadcastMessage(ClientInfo.ImageCodeUpper, b);
+                        break;
+                    case 1:
+                        server.BroadcastMessage(ClientInfo.ImageCodeLower, b);
+                        break;
+                }
             }
             public int getClientCount()
             {

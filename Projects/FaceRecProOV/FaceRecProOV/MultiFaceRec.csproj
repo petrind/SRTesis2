@@ -100,6 +100,8 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xaml" />
@@ -112,11 +114,37 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrameShooter.cs">
+    <Compile Include="CameraCalibration.cs" />
+    <Compile Include="FormCameraCalibNao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrameShooter.Designer.cs">
-      <DependentUpon>FrameShooter.cs</DependentUpon>
+    <Compile Include="FormCameraCalibNao.Designer.cs">
+      <DependentUpon>FormCameraCalibNao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrameShooterDistance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrameShooterDistance.Designer.cs">
+      <DependentUpon>FrameShooterDistance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageClient.cs" />
+    <Compile Include="Service References\multiFaceRec.LanguageService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SignDetector.cs" />
+    <Compile Include="FormCameraCalib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCameraCalib.Designer.cs">
+      <DependentUpon>FormCameraCalib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrameShooterSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrameShooterSign.Designer.cs">
+      <DependentUpon>FrameShooterSign.cs</DependentUpon>
     </Compile>
     <Compile Include="Features2DHomography.cs" />
     <Compile Include="SurfDetector.cs" />
@@ -131,18 +159,27 @@
       <DependentUpon>StopSignDetector.cs</DependentUpon>
     </Compile>
     <Compile Include="EigenObjectRecognizer.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignDetector.cs" />
+    <Compile Include="DistanceDetector.cs" />
     <Compile Include="Sockets.cs" />
-    <EmbeddedResource Include="FrameShooter.resx">
-      <DependentUpon>FrameShooter.cs</DependentUpon>
+    <EmbeddedResource Include="FormCameraCalibNao.resx">
+      <DependentUpon>FormCameraCalibNao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameShooterDistance.resx">
+      <DependentUpon>FrameShooterDistance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCameraCalib.resx">
+      <DependentUpon>FormCameraCalib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameShooterSign.resx">
+      <DependentUpon>FrameShooterSign.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SurfDetectorForm.resx">
       <DependentUpon>SurfDetectorForm.cs</DependentUpon>
@@ -150,8 +187,8 @@
     <EmbeddedResource Include="StopSignDetector.resx">
       <DependentUpon>StopSignDetector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -173,6 +210,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\multiFaceRec.LanguageService\MultiFaceRec.multiFaceRec.LanguageService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\multiFaceRec.LanguageService\MultiFaceRec.multiFaceRec.LanguageService.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\multiFaceRec.LanguageService\Service1.wsdl" />
+    <None Include="Service References\multiFaceRec.LanguageService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\multiFaceRec.LanguageService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\multiFaceRec.LanguageService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\multiFaceRec.LanguageService\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\multiFaceRec.LanguageService\Service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
@@ -297,12 +356,25 @@
     <Content Include="Resources\ImageStop\StopSignNorthAmerican.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\multiFaceRec.LanguageService\Service1.disco" />
+    <None Include="Service References\multiFaceRec.LanguageService\configuration91.svcinfo" />
+    <None Include="Service References\multiFaceRec.LanguageService\configuration.svcinfo" />
+    <None Include="Service References\multiFaceRec.LanguageService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="tbb.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="tbb_debug.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\multiFaceRec.LanguageService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

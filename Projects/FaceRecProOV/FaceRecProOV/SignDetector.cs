@@ -64,10 +64,10 @@ namespace MultiFaceRec
                     
                     //channels[0] is the mask for hue less than 20 or larger than 160
                     //red
-                    //CvInvoke.cvInRangeS(channels[0], new MCvScalar(10), new MCvScalar(170), channels[0]);
-                    //channels[0]._Not();
-                    //blue
-                    CvInvoke.cvInRangeS(channels[0], new MCvScalar(45), new MCvScalar(75), channels[0]);
+                    CvInvoke.cvInRangeS(channels[0], new MCvScalar(15), new MCvScalar(165), channels[0]);
+                    channels[0]._Not();
+                    //
+                    //CvInvoke.cvInRangeS(channels[0], new MCvScalar(45), new MCvScalar(75), channels[0]);
 
                     CvInvoke.cvShowImage("channel 0", channels[0]);
                     //channels[1] is the mask for satuation of at least 10, this is mainly used to filter out white pixels
@@ -95,7 +95,11 @@ namespace MultiFaceRec
         {
             for (; contours != null; contours = contours.HNext)
             {
-                //contours.ApproxPoly(contours.Perimeter * 0.02, 0, contours.Storage);
+                //draw box from any contour
+
+
+                imageGray.Draw(new CircleF(centerBox(contours.BoundingRectangle), 3), new Gray(150), 2);
+                contours.ApproxPoly(contours.Perimeter * 0.02, 0, contours.Storage);
                 if (contours.Area > 200)
                 {
                     double ratio = CvInvoke.cvMatchShapes(_octagon2, contours, Emgu.CV.CvEnum.CONTOURS_MATCH_TYPE.CV_CONTOURS_MATCH_I3, 0);
@@ -107,7 +111,7 @@ namespace MultiFaceRec
                             FindStopSign(img, stopSignList, boxList, child);
                         continue;
                     }
-
+                    
                     Rectangle box = contours.BoundingRectangle;
                     
                     
@@ -158,8 +162,8 @@ namespace MultiFaceRec
             imageGray = smoothedRedMask;
 
             //Use Dilate followed by Erode to eliminate small gaps in some countour.
-            //smoothedRedMask._Dilate(1);
-            //smoothedRedMask._Erode(1);
+            smoothedRedMask._Dilate(1);
+            smoothedRedMask._Erode(1);
 
             using (Image<Gray, Byte> canny = smoothedRedMask.Canny(new Gray(100), new Gray(50)))//Canny(100,50))
             using (MemStorage stor = new MemStorage())
@@ -178,6 +182,15 @@ namespace MultiFaceRec
             _tracker2.Dispose();
             _octagonStorage2.Dispose();
         }
+        private PointF centerBox(Rectangle rec)
+        {
+
+            PointF center = new PointF();
+            center.X = (rec.Right + rec.Left) / 2;
+            center.Y = (rec.Top + rec.Bottom) / 2;
+            return center;
+        }
+
     }
 }
 

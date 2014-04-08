@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAOServer2", "NAOServer2\NA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiFaceRec", "..\FaceRecProOV\FaceRecProOV\MultiFaceRec.csproj", "{CC813884-5D90-4044-9571-8FB7C54D9612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trackk", "..\trackk\trackk\trackk.csproj", "{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -50,21 +48,6 @@ Global
 		{CC813884-5D90-4044-9571-8FB7C54D9612}.Template|Win32.ActiveCfg = Release|x86
 		{CC813884-5D90-4044-9571-8FB7C54D9612}.Template|x86.ActiveCfg = Release|x86
 		{CC813884-5D90-4044-9571-8FB7C54D9612}.Template|x86.Build.0 = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Debug|Win32.ActiveCfg = Debug|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Debug|x86.ActiveCfg = Debug|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Debug|x86.Build.0 = Debug|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Release|Mixed Platforms.Build.0 = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Release|Win32.ActiveCfg = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Release|x86.ActiveCfg = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Release|x86.Build.0 = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Template|Mixed Platforms.ActiveCfg = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Template|Mixed Platforms.Build.0 = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Template|Win32.ActiveCfg = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Template|x86.ActiveCfg = Release|x86
-		{589FD176-8FFF-4E0B-8F94-1377F23AB5C0}.Template|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

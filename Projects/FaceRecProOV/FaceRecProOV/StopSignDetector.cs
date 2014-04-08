@@ -33,7 +33,7 @@ namespace MultiFaceRec
         //declaration from PS for image outside        
         Image img;
         string curDir;
-        MessageClientFaceRecognition mc;
+        MessageClient mc;
 
         bool useNao = false;
         bool useWebcam = false;
@@ -42,7 +42,7 @@ namespace MultiFaceRec
 
         //signdetector
         static Image img2;
-        SignDetector stopDetector;
+        DistanceDetector stopDetector;
         List<Image<Gray, Byte>> stopSignList = new List<Image<Gray, Byte>>();
         List<Rectangle> boxList = new List<Rectangle>();
         List<Contour<Point>> contourSignFound=new List<Contour<Point>>();
@@ -68,10 +68,10 @@ namespace MultiFaceRec
         {
             try
             {
-                mc = new MessageClientFaceRecognition();
+                mc = new MessageClient();
                 curDir = Directory.GetCurrentDirectory();
                 img2 = Image.FromFile(String.Format("{0}/Resources/ImageStop/StopSignNorthAmerican.png", Directory.GetCurrentDirectory()));
-                stopDetector = new SignDetector(new Image<Bgr, byte>(new Bitmap(img2)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC));                                
+                stopDetector = new DistanceDetector(new Image<Bgr, byte>(new Bitmap(img2)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC));                                
             }
             catch (Exception e)
             {
@@ -116,9 +116,9 @@ namespace MultiFaceRec
             {
                 try
                 {
-                    while (!mc.updated)
+                    while (!mc.updatedUpper)
                     { }
-                    img = Image.FromStream(new MemoryStream(mc.getByte()));
+                    img = Image.FromStream(new MemoryStream(mc.getByte(0)));
                     currentFrame = new Image<Bgr, byte>(new Bitmap(img)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                 }
                 catch (Exception ex)
@@ -270,7 +270,7 @@ namespace MultiFaceRec
 
             void ReadMessage(ClientInfo ci, uint code, byte[] buf, int len)
             {
-                if (code == ClientInfo.ImageCode)
+                if (code == ClientInfo.ImageCodeUpper)
                 {
                     Console.WriteLine("Message length: " + len + ", code " + code.ToString("X8") + ", content:");
                     ba = new byte[len];

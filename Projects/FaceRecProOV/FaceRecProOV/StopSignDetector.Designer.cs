@@ -126,7 +126,7 @@ namespace MultiFaceRec
             this.Controls.Add(this.ButtonWebcam);
             this.Controls.Add(this.imageBoxFrameGrabber);
             this.Name = "StopSignDetector";
-            this.Text = "Serg3ant\'s face detector and recgonizer :D";
+            this.Text = "Petrus\'s Stop Sign detector";
             this.Load += new System.EventHandler(this.StopSignDetector_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();

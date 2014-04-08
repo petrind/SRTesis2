@@ -136,3 +136,13 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\My_EMGU_Program.Properties.Resources.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\My EMGU Program.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\My EMGU Program.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\Camera_Calibration.Form1.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\My_EMGU_Program.Form2.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\My_EMGU_Program.Form3.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\My_EMGU_Program.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\My Advanced EMGU Program x86\My Advanced EMGU Program\My EMGU Program\obj\x86\Debug\My_EMGU_Program.Form1.resources
