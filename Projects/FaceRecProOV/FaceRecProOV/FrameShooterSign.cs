@@ -77,7 +77,7 @@ namespace MultiFaceRec
             {
                 mc = new MessageClient();
                 curDir = Directory.GetCurrentDirectory();
-                img2 = Image.FromFile(String.Format("{0}/Resources/ImageStop/hexagon.png", Directory.GetCurrentDirectory()));
+                img2 = Image.FromFile(String.Format("{0}/Resources/ImageStop/HexagonRed.jpg", Directory.GetCurrentDirectory()));
                 stopDetector = new SignDetector(new Image<Bgr, byte>(new Bitmap(img2)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC));                                
             }
             catch (Exception e)
@@ -108,6 +108,7 @@ namespace MultiFaceRec
                 grabber.QueryFrame();
                 useWebcam = true;
                 useNao = false;
+                
             }
             //Initialize the FrameGraber event
             Application.Idle += new EventHandler(FrameGrabber);

@@ -49,7 +49,7 @@ namespace MultiFaceRec
 
         //signdetector
         static Image img2;
-        DistanceDetector DisDetector;
+        PointDetector DisDetector;
         List<Image<Gray, Byte>> stopSignList = new List<Image<Gray, Byte>>();
         List<Rectangle> boxList = new List<Rectangle>();
         List<Contour<Point>> contourSignFound=new List<Contour<Point>>();
@@ -77,8 +77,8 @@ namespace MultiFaceRec
             {
                 mc = new MessageClient();
                 curDir = Directory.GetCurrentDirectory();
-                img2 = Image.FromFile(String.Format("{0}/Resources/ImageStop/hexagon.png", Directory.GetCurrentDirectory()));
-                DisDetector = new DistanceDetector(new Image<Bgr, byte>(new Bitmap(img2)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC));                                
+                //img2 = Image.FromFile(String.Format("{0}/Resources/ImageStop/hexagon.png", Directory.GetCurrentDirectory()));
+                DisDetector = new PointDetector();                                
             }
             catch (Exception e)
             {
@@ -137,10 +137,10 @@ namespace MultiFaceRec
                     //currentFrame = new Image<Bgr, byte>(BitmapFromSource(imageBitmap)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                     imgU = Image.FromStream(new MemoryStream(mc.getByte(0)));
                     currentFrameU = new Image<Bgr, byte>(new Bitmap(imgU)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                    while (!mc.updatedLower)
-                    { }
-                    imgL = Image.FromStream(new MemoryStream(mc.getByte(1)));
-                    currentFrameL = new Image<Bgr, byte>(new Bitmap(imgU)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                    //while (!mc.updatedLower)
+                    //{ }
+                    //imgL = Image.FromStream(new MemoryStream(mc.getByte(1)));
+                    //currentFrameL = new Image<Bgr, byte>(new Bitmap(imgL)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
 
                 }
                 catch (Exception ex)
@@ -172,7 +172,7 @@ namespace MultiFaceRec
             }
             
             ImageBoxUpper.Image = currentFrameU;
-            ImageBoxLower.Image = currentFrameL;
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -227,19 +227,9 @@ namespace MultiFaceRec
             {
                 MessageBox.Show("Error: Error FrameShoot_Click. Original error: " + ex.Message);
             }
-            DisDetector.DetectStopSign(currentFrameU, stopSignList, boxList, contourSignFound);
+            DisDetector.DetectPointBoard(currentFrameU, stopSignList, boxList, contourSignFound);
             ImageBoxUpperResult.Image = DisDetector.imageGray;
-            if (useNao)
-            {
-                try
-                {
-                    DisDetector.DetectStopSign(currentFrameL, stopSignList, boxList, contourSignFound);
-                    ImageBoxLowerResult.Image = DisDetector.imageGray;
-                }
-                catch (Exception ex) {
-                    Console.Write("Error: " + ex);
-                }
-            }
+            
             try
             {
                 area.Text = DisDetector.areas[0].ToString();

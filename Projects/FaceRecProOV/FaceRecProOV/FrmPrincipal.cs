@@ -267,7 +267,7 @@ namespace MultiFaceRec
                                 //End of Addition by PS
 
                                 //    name = recognizer.Recognize(result);
-                                if (name != ""  && useNao && !calledName.Any(x=> x==name) )
+                                if (name != ""  && useNao )//&& !calledName.Any(x=> x==name) )
                                 {
                                     
                                     mc.sendVoice(name);                                    
@@ -277,7 +277,7 @@ namespace MultiFaceRec
                                 else if (useNao )
                                 {
                                     called = true;
-                                    mc.sendVoice("");
+                                    //mc.sendVoice("");
                                 }
 
                                 //Draw the label for each face detected and recognized

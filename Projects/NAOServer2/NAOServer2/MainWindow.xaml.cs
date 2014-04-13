@@ -204,7 +204,7 @@ namespace NAOserver
                             try
                             {
                                 imageUpperBytes = naoCam.getImageUpper(); // store an image in imageBytes 
-                                imageLowerBytes = naoCam.getImageLower();
+                                //imageLowerBytes = naoCam.getImageLower();
                             }
                             catch (Exception ex)
                             {
@@ -216,48 +216,48 @@ namespace NAOserver
                         else
                         {
                             imageUpperBytes = null;
-                            imageLowerBytes = null;
+                            //imageLowerBytes = null;
                         }
                         //commented to make broadcast raw data
                         if (imageUpperBytes != null) // if the image isnt empty create a bitmap and send via websocket 
                             imageBitmapUpper = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageUpperBytes, currentFormat.width * 3); 
                         else
                             imageBitmapUpper = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
-                        //lower image handler
-                        if (imageLowerBytes != null) // if the image isnt empty create a bitmap and send via websocket 
-                            imageBitmapLower = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageLowerBytes, currentFormat.width * 3);
-                        else
-                            imageBitmapLower = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
+                        ////lower image handler - Not Worked
+                        //if (imageLowerBytes != null) // if the image isnt empty create a bitmap and send via websocket 
+                        //    imageBitmapLower = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageLowerBytes, currentFormat.width * 3);
+                        //else
+                        //    imageBitmapLower = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
                         
                         frameUpper = BitmapFrame.Create(imageBitmapUpper);
-                        frameLower = BitmapFrame.Create(imageBitmapLower);
+                        //frameLower = BitmapFrame.Create(imageBitmapLower);
  
                         // converts bitmap frames to jpg 
                         JpegBitmapEncoder converterUpper = new JpegBitmapEncoder();
-                        JpegBitmapEncoder converterLower = new JpegBitmapEncoder();
+                        //JpegBitmapEncoder converterLower = new JpegBitmapEncoder();
  
                         converterUpper.Frames.Add(frameUpper);
-                        converterLower.Frames.Add(frameLower);
+                        //converterLower.Frames.Add(frameLower);
  
                         // memory stream to save jpg to byte array 
                         MemoryStream msu = new MemoryStream();
-                        MemoryStream msl = new MemoryStream();
+                        //MemoryStream msl = new MemoryStream();
  
                         converterUpper.Save(msu);
-                        converterLower.Save(msl);
+                        //converterLower.Save(msl);
                         byte[] bytesU = null;
-                        byte[] bytesL = null;
+                        //byte[] bytesL = null;
                         msu.Close();
                         if (ss.getClientCount() > 0 || sessionList.Count > 0)
                         {
                             bytesU = msu.ToArray();
-                            bytesL = msl.ToArray();
+                            //bytesL = msl.ToArray();
                         }
 
                         if (ss.getClientCount() > 0)
                         {
                             ss.BroadcastByte(bytesU,0); //broadcast jpg
-                            ss.BroadcastByte(bytesL, 1);
+                            //ss.BroadcastByte(bytesL, 1);
                             //ss.BroadcastImage(imageBytes); //broadcast raw
                         }
 

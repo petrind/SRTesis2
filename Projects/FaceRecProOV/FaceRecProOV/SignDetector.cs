@@ -35,14 +35,22 @@ namespace MultiFaceRec
             _octagonStorage2 = new MemStorage();
             _octagon2 = new Contour<Point>(_octagonStorage2);
             _octagon2.PushMulti(new Point[] { 
-            new Point(1, 0),
-            new Point(2, 0),
-            new Point(3, 1),
-            new Point(3, 2),
-            new Point(2, 3),
-            new Point(1, 3),
-            new Point(0, 2),
-            new Point(0, 1)},
+                //hexagon
+                new Point(1, 0),
+                new Point(2, 0),
+                new Point(3, 1),
+                new Point(2, 2),
+                new Point(1, 2),
+                new Point(0, 1)},
+                //octagon
+            //new Point(1, 0),
+            //new Point(2, 0),
+            //new Point(3, 1),
+            //new Point(3, 2),
+            //new Point(2, 3),
+            //new Point(1, 3),
+            //new Point(0, 2),
+            //new Point(0, 1)},
                Emgu.CV.CvEnum.BACK_OR_FRONT.FRONT);
         }
 
@@ -67,11 +75,11 @@ namespace MultiFaceRec
                     CvInvoke.cvInRangeS(channels[0], new MCvScalar(15), new MCvScalar(165), channels[0]);
                     channels[0]._Not();
                     //
-                    //CvInvoke.cvInRangeS(channels[0], new MCvScalar(45), new MCvScalar(75), channels[0]);
+                    //CvInvoke.cvInRangeS(channels[0], new MCvScalar(110), new MCvScalar(130), channels[0]);
 
                     CvInvoke.cvShowImage("channel 0", channels[0]);
                     //channels[1] is the mask for satuation of at least 10, this is mainly used to filter out white pixels
-                    channels[1]._ThresholdBinary(new Gray(10), new Gray(255.0));
+                    channels[1]._ThresholdBinary(new Gray(50), new Gray(255.0));
                     //channels[2]._ThresholdBinary(new Gray(90), new Gray(255.0));
                     
                     CvInvoke.cvAnd(channels[0], channels[1], channels[0], IntPtr.Zero);
@@ -100,7 +108,7 @@ namespace MultiFaceRec
 
                 imageGray.Draw(new CircleF(centerBox(contours.BoundingRectangle), 3), new Gray(150), 2);
                 contours.ApproxPoly(contours.Perimeter * 0.02, 0, contours.Storage);
-                if (contours.Area > 200)
+                if (contours.Area > 20)
                 {
                     double ratio = CvInvoke.cvMatchShapes(_octagon2, contours, Emgu.CV.CvEnum.CONTOURS_MATCH_TYPE.CV_CONTOURS_MATCH_I3, 0);
 

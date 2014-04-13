@@ -1,0 +1,21 @@
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\ColorCombo.ColorComboBox.resources
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.DraughtsBoard.resources
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.Form1.resources
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.csproj.GenerateResource.Cache
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.csprojResolveAssemblyReference.cache
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\bin\Debug\Draughts.exe
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\bin\Debug\Draughts.pdb
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\bin\Debug\BoardControl.dll
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\bin\Debug\Fuzzy Logic Library.dll
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.exe
+C:\Users\Remote\Downloads\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\bin\Debug\Draughts.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\bin\Debug\Draughts.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\ColorCombo.ColorComboBox.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.DraughtsBoard.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\Draughts.Form1.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\Learning_Draughts\Learning_Draughts_src\LDCode\Draughts\Draughts\obj\Debug\GenerateResource-ResGen.write.1.tlog

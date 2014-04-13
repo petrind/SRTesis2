@@ -27,8 +27,9 @@ namespace NAO_Camera_WPF
     { 
         public VideoDeviceProxy naoCameraUpper = null;
         public VideoDeviceProxy naoCameraLower = null;
+        
         string subsNameUpper = "NAO Camera Upper";
-        string subsNameBottom= "NAO Camera Bottom";
+        string subsNameLower= "NAO Camera Lower";
         public List<NaoCamImageFormat> NaoCamImageFormats = new 
 List<NaoCamImageFormat>(); 
  
@@ -91,7 +92,7 @@ List<NaoCamImageFormat>();
                 try 
                 {
                     naoCameraUpper.unsubscribe(subsNameUpper);
-                    naoCameraLower.unsubscribe(subsNameBottom);
+                    naoCameraLower.unsubscribe(subsNameLower);
                 } 
                 catch (Exception) 
                 { 
@@ -99,7 +100,7 @@ List<NaoCamImageFormat>();
                 
                 // subscribe to NAO Camera for easier access to camera memory 
                 naoCameraUpper.subscribe(subsNameUpper, format.id, ColorSpace, FPS);
-                naoCameraLower.subscribe(subsNameBottom, format.id, ColorSpace, FPS);
+                naoCameraLower.subscribe(subsNameLower, format.id, ColorSpace, FPS);
                 SetCamera();
             } 
             catch (Exception e) 
@@ -123,7 +124,7 @@ List<NaoCamImageFormat>();
                 { 
                     // unsubscribe so the NAO knows we do not need data from the camera anymore 
                     naoCameraUpper.unsubscribe(subsNameUpper);
-                    naoCameraLower.unsubscribe(subsNameBottom); 
+                    naoCameraLower.unsubscribe(subsNameLower); 
                 } 
             } 
             catch 
@@ -137,8 +138,8 @@ List<NaoCamImageFormat>();
         /// </summary>
         public void SetCamera()
         {
+            naoCameraLower.setCameraParameter(subsNameLower, 18, 1);
             naoCameraUpper.setCameraParameter(subsNameUpper, 18, 0);
-            naoCameraLower.setCameraParameter(subsNameUpper, 18, 1);
         }
         
 
@@ -174,7 +175,7 @@ List<NaoCamImageFormat>();
             {
                 if (naoCameraLower != null)
                 {
-                    Object imageObject = naoCameraLower.getImageRemote(subsNameBottom);
+                    Object imageObject = naoCameraLower.getImageRemote(subsNameLower);
                     image = (byte[])((ArrayList)imageObject)[6];
                 }
             }

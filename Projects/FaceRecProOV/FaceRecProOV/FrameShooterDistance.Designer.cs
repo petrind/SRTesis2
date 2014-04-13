@@ -49,12 +49,8 @@ namespace MultiFaceRec
             this.tipeLabel = new System.Windows.Forms.Label();
             this.tipeTextBox = new System.Windows.Forms.TextBox();
             this.connectLumenButton = new System.Windows.Forms.Button();
-            this.ImageBoxLowerResult = new Emgu.CV.UI.ImageBox();
-            this.ImageBoxLower = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxUpper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxUpperResult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageBoxLowerResult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageBoxLower)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonWebcam
@@ -68,20 +64,20 @@ namespace MultiFaceRec
             this.ButtonWebcam.UseVisualStyleBackColor = true;
             this.ButtonWebcam.Click += new System.EventHandler(this.ConnectWebcamButton_Click);
             // 
-            // imageBoxFrameGrabber
+            // ImageBoxUpper
             // 
             this.ImageBoxUpper.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ImageBoxUpper.Location = new System.Drawing.Point(12, 12);
-            this.ImageBoxUpper.Name = "imageBoxFrameGrabber";
+            this.ImageBoxUpper.Name = "ImageBoxUpper";
             this.ImageBoxUpper.Size = new System.Drawing.Size(320, 240);
             this.ImageBoxUpper.TabIndex = 4;
             this.ImageBoxUpper.TabStop = false;
             // 
-            // imageBox1
+            // ImageBoxUpperResult
             // 
             this.ImageBoxUpperResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ImageBoxUpperResult.Location = new System.Drawing.Point(350, 13);
-            this.ImageBoxUpperResult.Name = "imageBox1";
+            this.ImageBoxUpperResult.Name = "ImageBoxUpperResult";
             this.ImageBoxUpperResult.Size = new System.Drawing.Size(301, 239);
             this.ImageBoxUpperResult.TabIndex = 5;
             this.ImageBoxUpperResult.TabStop = false;
@@ -213,31 +209,11 @@ namespace MultiFaceRec
             this.connectLumenButton.UseVisualStyleBackColor = true;
             this.connectLumenButton.Click += new System.EventHandler(this.connectLumenButton_Click);
             // 
-            // imageBox2
-            // 
-            this.ImageBoxLowerResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImageBoxLowerResult.Location = new System.Drawing.Point(350, 262);
-            this.ImageBoxLowerResult.Name = "imageBox2";
-            this.ImageBoxLowerResult.Size = new System.Drawing.Size(301, 239);
-            this.ImageBoxLowerResult.TabIndex = 33;
-            this.ImageBoxLowerResult.TabStop = false;
-            // 
-            // imageBox3
-            // 
-            this.ImageBoxLower.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImageBoxLower.Location = new System.Drawing.Point(31, 262);
-            this.ImageBoxLower.Name = "imageBox3";
-            this.ImageBoxLower.Size = new System.Drawing.Size(301, 239);
-            this.ImageBoxLower.TabIndex = 34;
-            this.ImageBoxLower.TabStop = false;
-            // 
             // FrameShooterDistance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 516);
-            this.Controls.Add(this.ImageBoxLower);
-            this.Controls.Add(this.ImageBoxLowerResult);
             this.Controls.Add(this.connectLumenButton);
             this.Controls.Add(this.tipeTextBox);
             this.Controls.Add(this.tipeLabel);
@@ -260,8 +236,6 @@ namespace MultiFaceRec
             this.Load += new System.EventHandler(this.FrameShooter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxUpper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxUpperResult)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageBoxLowerResult)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageBoxLower)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,8 +261,6 @@ namespace MultiFaceRec
         private Label tipeLabel;
         private TextBox tipeTextBox;
         private Button connectLumenButton;
-        private Emgu.CV.UI.ImageBox ImageBoxLowerResult;
-        private Emgu.CV.UI.ImageBox ImageBoxLower;
 
                           
     }

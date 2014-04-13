@@ -103,9 +103,9 @@ namespace MultiFaceRec
                     //while (!mc.updatedUpper)
                     //{ }
                     //img = new Image<Bgr, byte>(new Bitmap(Image.FromStream(new MemoryStream(mc.getByte(0))))).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                    while (!mc.updatedLower)
+                    while (!mc.updatedUpper)
                     { }
-                    img = new Image<Bgr, byte>(new Bitmap(Image.FromStream(new MemoryStream(mc.getByte(1))))).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                    img = new Image<Bgr, byte>(new Bitmap(Image.FromStream(new MemoryStream(mc.getByte(0))))).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                 }
             } 
             Gray_Frame = img.Convert<Gray,Byte>();

@@ -1,0 +1,59 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draughts", "Draughts\Draughts.csproj", "{E1C26C55-8AE9-499A-9CC6-4780FF86B237}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AC9F26FA-8455-4A76-8610-5879595DC126} = {AC9F26FA-8455-4A76-8610-5879595DC126}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardControl", "..\Connect_Four\BoardControl\BoardControl.csproj", "{AC9F26FA-8455-4A76-8610-5879595DC126}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fuzzy Logic Library", "..\Fuzzy Dot Net\Fuzzy Logic Library\Fuzzy Logic Library.csproj", "{7A8DA3AE-E6F8-4D37-A571-72CFDA61B99E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectName0 = \u0022$/Draughts.root/Draughts\u0022,\u0020BBAAAAAA
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection0 = Draughts\\
+		SolutionUniqueID = {2273F458-EC45-485A-B1AB-4EA4BBF96AE4}
+		SccProjectUniqueName1 = ..\\Connect_Four\\BoardControl\\BoardControl.csproj
+		SccLocalPath1 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = Connect_Four\\BoardControl\\
+		SccProjectUniqueName2 = Draughts\\Draughts.csproj
+		SccLocalPath2 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection2 = Draughts\\Draughts\\
+		SccProjectUniqueName3 = ..\\Fuzzy\u0020Dot\u0020Net\\Fuzzy\u0020Logic\u0020Library\\Fuzzy\u0020Logic\u0020Library.csproj
+		SccLocalPath3 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection3 = Fuzzy\u0020Dot\u0020Net\\Fuzzy\u0020Logic\u0020Library\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E1C26C55-8AE9-499A-9CC6-4780FF86B237}.Debug.ActiveCfg = Debug|.NET
+		{E1C26C55-8AE9-499A-9CC6-4780FF86B237}.Debug.Build.0 = Debug|.NET
+		{E1C26C55-8AE9-499A-9CC6-4780FF86B237}.Release.ActiveCfg = Release|.NET
+		{E1C26C55-8AE9-499A-9CC6-4780FF86B237}.Release.Build.0 = Release|.NET
+		{AC9F26FA-8455-4A76-8610-5879595DC126}.Debug.ActiveCfg = Debug|.NET
+		{AC9F26FA-8455-4A76-8610-5879595DC126}.Debug.Build.0 = Debug|.NET
+		{AC9F26FA-8455-4A76-8610-5879595DC126}.Release.ActiveCfg = Release|.NET
+		{AC9F26FA-8455-4A76-8610-5879595DC126}.Release.Build.0 = Release|.NET
+		{7A8DA3AE-E6F8-4D37-A571-72CFDA61B99E}.Debug.ActiveCfg = Debug|.NET
+		{7A8DA3AE-E6F8-4D37-A571-72CFDA61B99E}.Debug.Build.0 = Debug|.NET
+		{7A8DA3AE-E6F8-4D37-A571-72CFDA61B99E}.Release.ActiveCfg = Release|.NET
+		{7A8DA3AE-E6F8-4D37-A571-72CFDA61B99E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

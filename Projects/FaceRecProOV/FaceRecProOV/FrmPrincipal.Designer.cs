@@ -72,7 +72,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(107, 20);
             this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "Sergio";
+            this.textBox1.Text = "name";
             // 
             // groupBox1
             // 

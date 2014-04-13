@@ -71,9 +71,9 @@ namespace NAO_Camera_WPF
                 //System.Threading.Thread.Sleep(1000); 
  
                 // reduce stiffness 
-                naoMotion.stiffnessInterpolation("Head", 0.0f, 0.1f); 
-                naoMotion.stiffnessInterpolation("LArm", 0.1f, 0.1f); 
-                naoMotion.stiffnessInterpolation("RArm", 0.1f, 0.1f); 
+                //naoMotion.stiffnessInterpolation("Head", 0.0f, 0.1f); 
+                //naoMotion.stiffnessInterpolation("LArm", 0.1f, 0.1f); 
+                //naoMotion.stiffnessInterpolation("RArm", 0.1f, 0.1f); 
             } 
             catch (Exception e) 
             { 

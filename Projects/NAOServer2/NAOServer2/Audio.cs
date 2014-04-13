@@ -122,9 +122,12 @@ e.ToString());
             if (tts != null) 
             { 
                 //tts.say(sentence);
-                
-                var service = new Service1Client();
-                service.SetPersonName(sentence);
+                try
+                {
+                    //var service = new Service1Client();
+                    //service.SetPersonName(sentence);
+                }
+                catch { }
                 //MessageBox.Show("Message sent successfully!"); 
                 
             } 
