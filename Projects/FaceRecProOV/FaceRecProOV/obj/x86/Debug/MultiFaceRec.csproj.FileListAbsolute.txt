@@ -286,9 +286,14 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrameShooterDistance.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrameShooterSign.resources
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FormCameraCalib.resources
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FormCameraCalibNao.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FormStopSignDetector.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\Resources\ImageStop\octagon.PNG
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\Resources\ImageStop\HexagonBlue.jpg
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\Resources\ImageStop\HexagonRed.jpg
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrameShooterColor.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\bin\Debug\Resources\Feature.jpg
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrameShooterSURF.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrameShooterShape.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\GenerateResource.write.438.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrameShooterCameraCalibNao.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrameShooterCameraCalib.resources

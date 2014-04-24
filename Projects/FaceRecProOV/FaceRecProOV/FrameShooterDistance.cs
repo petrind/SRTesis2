@@ -1,7 +1,9 @@
 ﻿
 //Multiple face detection and recognition in real time
 //Using EmguCV cross platform .Net wrapper to the Intel OpenCV image processing library for C#.Net
-//Writed by Sergio Andrés Guitérrez Rojas
+//
+//Basedby Sergio Andrés Guitérrez Rojas
+//
 //"Serg3ant" for the delveloper comunity
 // Sergiogut1805@hotmail.com
 //Regards from Bucaramanga-Colombia ;)
@@ -55,7 +57,7 @@ namespace MultiFaceRec
         List<Contour<Point>> contourSignFound=new List<Contour<Point>>();
 
         //Declararation of all variables, vectors and haarcascades
-        Image<Bgr, Byte> currentFrameU, currentFrameL;
+        Image<Bgr, Byte> currentFrameU;
         //Capture grabber;
         HaarCascade face;
         //HaarCascade eye;
@@ -227,7 +229,22 @@ namespace MultiFaceRec
             {
                 MessageBox.Show("Error: Error FrameShoot_Click. Original error: " + ex.Message);
             }
-            DisDetector.DetectPointBoard(currentFrameU, stopSignList, boxList, contourSignFound);
+            //DisDetector.DetectPointBoard(currentFrameU, stopSignList, boxList, contourSignFound);
+            DisDetector.recognizeBoard(currentFrameU);
+            if (useNao && mc.isconnect())
+            {
+                try
+                {
+                    float dy = -(DisDetector.colorPoints[0].point.X ) / 100;
+                    float dx = 0;// (DisDetector.z - 50) / 100;
+                    mc.sendMoveTo(dx, dy, 0);
+                }
+                catch
+                {
+                }
+            }
+
+            
             ImageBoxUpperResult.Image = DisDetector.imageGray;
             
             try

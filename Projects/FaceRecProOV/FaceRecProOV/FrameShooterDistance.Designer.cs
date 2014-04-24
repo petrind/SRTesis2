@@ -76,9 +76,9 @@ namespace MultiFaceRec
             // ImageBoxUpperResult
             // 
             this.ImageBoxUpperResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImageBoxUpperResult.Location = new System.Drawing.Point(350, 13);
+            this.ImageBoxUpperResult.Location = new System.Drawing.Point(331, 12);
             this.ImageBoxUpperResult.Name = "ImageBoxUpperResult";
-            this.ImageBoxUpperResult.Size = new System.Drawing.Size(301, 239);
+            this.ImageBoxUpperResult.Size = new System.Drawing.Size(320, 239);
             this.ImageBoxUpperResult.TabIndex = 5;
             this.ImageBoxUpperResult.TabStop = false;
             // 

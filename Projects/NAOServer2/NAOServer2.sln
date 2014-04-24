@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAOServer2", "NAOServer2\NAOServer2.csproj", "{91DA175C-15FC-4912-86FA-01386C24618F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiFaceRec", "..\FaceRecProOV\FaceRecProOV\MultiFaceRec.csproj", "{CC813884-5D90-4044-9571-8FB7C54D9612}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -33,21 +31,6 @@ Global
 		{91DA175C-15FC-4912-86FA-01386C24618F}.Template|Win32.ActiveCfg = Release|x86
 		{91DA175C-15FC-4912-86FA-01386C24618F}.Template|x86.ActiveCfg = Release|x86
 		{91DA175C-15FC-4912-86FA-01386C24618F}.Template|x86.Build.0 = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Debug|Win32.ActiveCfg = Debug|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Debug|x86.ActiveCfg = Debug|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Debug|x86.Build.0 = Debug|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Release|Mixed Platforms.Build.0 = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Release|Win32.ActiveCfg = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Release|x86.ActiveCfg = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Release|x86.Build.0 = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Template|Mixed Platforms.ActiveCfg = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Template|Mixed Platforms.Build.0 = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Template|Win32.ActiveCfg = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Template|x86.ActiveCfg = Release|x86
-		{CC813884-5D90-4044-9571-8FB7C54D9612}.Template|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

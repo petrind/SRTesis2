@@ -1,6 +1,6 @@
 ﻿namespace MultiFaceRec
 {
-    partial class FormCameraCalib
+    partial class FrameShooterCameraCalibNao
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,8 @@
             this.Main_Picturebox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.useWebCamButton = new System.Windows.Forms.Button();
+            this.useNaoButton = new System.Windows.Forms.Button();
             this.Start_BTN = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,9 +48,9 @@
             // 
             // Main_Picturebox
             // 
-            this.Main_Picturebox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Main_Picturebox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.Main_Picturebox.Location = new System.Drawing.Point(3, 3);
             this.Main_Picturebox.Name = "Main_Picturebox";
             this.Main_Picturebox.Size = new System.Drawing.Size(641, 440);
@@ -58,9 +60,9 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
@@ -75,9 +77,11 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.useWebCamButton);
+            this.panel1.Controls.Add(this.useNaoButton);
             this.panel1.Controls.Add(this.Start_BTN);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Controls.Add(this.label3);
@@ -88,6 +92,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(194, 440);
             this.panel1.TabIndex = 1;
+            // 
+            // useWebCam
+            // 
+            this.useWebCamButton.Location = new System.Drawing.Point(96, 144);
+            this.useWebCamButton.Name = "useWebCam";
+            this.useWebCamButton.Size = new System.Drawing.Size(89, 23);
+            this.useWebCamButton.TabIndex = 7;
+            this.useWebCamButton.Text = "Use Webcam";
+            this.useWebCamButton.UseVisualStyleBackColor = true;
+            this.useWebCamButton.Click += new System.EventHandler(this.useWebCam_Click);
+            // 
+            // useNaoButton
+            // 
+            this.useNaoButton.Location = new System.Drawing.Point(96, 115);
+            this.useNaoButton.Name = "useNaoButton";
+            this.useNaoButton.Size = new System.Drawing.Size(89, 23);
+            this.useNaoButton.TabIndex = 6;
+            this.useNaoButton.Text = "use Nao";
+            this.useNaoButton.UseVisualStyleBackColor = true;
+            this.useNaoButton.Click += new System.EventHandler(this.useNaoButton_Click);
             // 
             // Start_BTN
             // 
@@ -157,13 +181,13 @@
             this.Sub_PicturBox.TabIndex = 0;
             this.Sub_PicturBox.TabStop = false;
             // 
-            // Form1
+            // FormCameraCalibNao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 470);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "FormCameraCalibNao";
             this.Text = "Camera Caibration";
             ((System.ComponentModel.ISupportInitialize)(this.Main_Picturebox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -186,6 +210,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Start_BTN;
+        private System.Windows.Forms.Button useWebCamButton;
+        private System.Windows.Forms.Button useNaoButton;
     }
 }
 

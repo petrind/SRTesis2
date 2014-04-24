@@ -32,7 +32,7 @@ namespace NAOserver
     public partial class MainWindow : Window 
     { 
         // Classes 
-        private Camera naoCam = null; 
+        private static Camera naoCam = null; 
         private static Motion naoMotion = null;
         private static Audio naoAudio = null;
         private DispatcherTimer dispatcherTimer = new DispatcherTimer(); 
@@ -95,8 +95,8 @@ namespace NAOserver
             try
             {
                 // disconnect from camera and stop the timer 
-                naoCam.Disconnect();
                 naoMotion.Disconnect();
+                naoCam.Disconnect();
                 naoAudio.Disconnect();
                 dispatcherTimer.Stop();
             }
@@ -185,12 +185,12 @@ namespace NAOserver
         {
             
             byte[] imageUpperBytes=null;
-            byte[] imageLowerBytes = null;
+            
             BitmapSource imageBitmapUpper;
-            BitmapSource imageBitmapLower;
+            
             BitmapFrame frameUpper;
-            BitmapFrame frameLower;
-            // check for websocket sessions if none exist nothing needs to be done 
+            
+            // check for websocket sessions if none exist nothing needs to be done
             if (true)//sessionList.Count > 0)  
             { 
                 if (isCamInitialized && !isPictureUpdating) 
@@ -301,8 +301,10 @@ namespace NAOserver
         {
             naoAudio.talk(message);
         }
+
         static void messageCommand(string message)
         {
+            
             // move the robots head in the desired direction 
             if (message == "left")
             {
@@ -424,6 +426,15 @@ namespace NAOserver
                 pitch = naoMotion.getAngle("LWristYaw");
                 naoMotion.moveJoint(pitch - .1f, "LWristYaw");
             }
+            if (message == "SwitchCameraBottom")
+            {
+                naoCam.SetCamera(1);
+                
+            }
+            if (message == "SwitchCameraTop")
+            {
+                naoCam.SetCamera(0);
+            }
         }
         private void naoConnect()
         {
@@ -530,6 +541,14 @@ namespace NAOserver
                     messageVoice(System.Text.Encoding.UTF8.GetString(buf, 0, len));
                     ci.SendMessage(ClientInfo.VoiceCode, Encoding.UTF8.GetBytes(code.ToString("X8") + " success"));
                 }
+                else if (code == ClientInfo.moveToCode)
+                {
+                    Console.WriteLine("Message length, code " + code.ToString("X8") + ", content:" + buf.ToString());
+
+                    string[] value = System.Text.Encoding.UTF8.GetString(buf, 0, len).Split(',');
+                    naoMotion.moveTo(float.Parse(value[0]), float.Parse(value[1]), float.Parse(value[2]));
+                    ci.SendMessage(ClientInfo.VoiceCode, Encoding.UTF8.GetBytes(code.ToString("X8") + " success"));
+                }
             }
             public void BroadcastString(String text)
             {
@@ -556,6 +575,11 @@ namespace NAOserver
             {
                 return server.count();
             }
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            naoMotion.moveTo(1f, 1f, 0);
         }
     }
     

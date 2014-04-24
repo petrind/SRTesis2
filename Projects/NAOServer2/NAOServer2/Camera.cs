@@ -7,7 +7,8 @@ using System;
 using System.Collections; 
 using System.Collections.Generic; 
 using System.Windows; 
-using Aldebaran.Proxies; 
+using Aldebaran.Proxies;
+using System.Threading;
  
 namespace NAO_Camera_WPF 
 { 
@@ -26,12 +27,13 @@ namespace NAO_Camera_WPF
     public class Camera 
     { 
         public VideoDeviceProxy naoCameraUpper = null;
-        public VideoDeviceProxy naoCameraLower = null;
+        
         
         string subsNameUpper = "NAO Camera Upper";
         string subsNameLower= "NAO Camera Lower";
         public List<NaoCamImageFormat> NaoCamImageFormats = new 
-List<NaoCamImageFormat>(); 
+List<NaoCamImageFormat>();
+        public bool cameraReady;
  
         // class constructor 
         public Camera() 
@@ -80,19 +82,19 @@ List<NaoCamImageFormat>();
         { 
             try 
             { 
-                if (naoCameraUpper != null || naoCameraLower !=null) 
+                if (naoCameraUpper != null ) 
                 { 
                     Disconnect(); 
                 } 
  
                 naoCameraUpper = new VideoDeviceProxy(ip, 9559);
-                naoCameraLower = new VideoDeviceProxy(ip, 9559);
+               
  
                 // Attempt to unsubscribe incase program was not shut down properly 
                 try 
                 {
                     naoCameraUpper.unsubscribe(subsNameUpper);
-                    naoCameraLower.unsubscribe(subsNameLower);
+                    
                 } 
                 catch (Exception) 
                 { 
@@ -100,15 +102,15 @@ List<NaoCamImageFormat>();
                 
                 // subscribe to NAO Camera for easier access to camera memory 
                 naoCameraUpper.subscribe(subsNameUpper, format.id, ColorSpace, FPS);
-                naoCameraLower.subscribe(subsNameLower, format.id, ColorSpace, FPS);
-                SetCamera();
+                
+                SetCamera(1);
             } 
             catch (Exception e) 
             { 
                 // display error message and write exceptions to a file 
                 MessageBox.Show("Exception occurred in naocam connect, error log in C:\\NAOserver\\exception.txt"); 
                 naoCameraUpper = null;
-                naoCameraLower = null;
+                
                 System.IO.File.WriteAllText(@"C:\\NAOserver\\exception.txt",e.ToString()); 
             } 
         } 
@@ -120,26 +122,31 @@ List<NaoCamImageFormat>();
         { 
             try 
             { 
-                if (naoCameraUpper != null || naoCameraLower!=null) 
+                if (naoCameraUpper != null ) 
                 { 
                     // unsubscribe so the NAO knows we do not need data from the camera anymore 
                     naoCameraUpper.unsubscribe(subsNameUpper);
-                    naoCameraLower.unsubscribe(subsNameLower); 
+                    
                 } 
             } 
             catch 
             {  } 
  
             naoCameraUpper = null;
-            naoCameraLower = null;
+            
         }
         /// <summary>
         /// Change to Bottom Cam
         /// </summary>
-        public void SetCamera()
+        public void SetCamera(int option)
         {
-            naoCameraLower.setCameraParameter(subsNameLower, 18, 1);
-            naoCameraUpper.setCameraParameter(subsNameUpper, 18, 0);
+            cameraReady = false;
+            if(option==0)
+                naoCameraUpper.setCameraParameter(subsNameUpper, 18, 0);
+            else if(option==1)
+                naoCameraUpper.setCameraParameter(subsNameUpper, 18, 1);
+            //Thread.Sleep(1000);
+            cameraReady = true;
         }
         
 
@@ -173,11 +180,7 @@ List<NaoCamImageFormat>();
 
             try
             {
-                if (naoCameraLower != null)
-                {
-                    Object imageObject = naoCameraLower.getImageRemote(subsNameLower);
-                    image = (byte[])((ArrayList)imageObject)[6];
-                }
+                
             }
             catch (Exception)
             { }

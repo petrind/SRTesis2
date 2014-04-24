@@ -21,6 +21,7 @@ namespace NAO_Camera_WPF
         private AudioDeviceProxy audio = null; 
         private TextToSpeechProxy tts = null;
         private MemoryProxy mem = null;
+        private Boolean isRecording =false;
  
         // Worker to download files in the background 
         private BackgroundWorker bgWorker = new BackgroundWorker(); 
@@ -62,6 +63,7 @@ e.ToString());
         /// </summary> 
         public void Disconnect() 
         { 
+            if(isRecording)
             stopRecording(); 
             tts = null; 
             audio = null; 
@@ -75,7 +77,8 @@ e.ToString());
             // if connection was successful start recording audio 
             if (audio != null) 
             { 
-                audio.startMicrophonesRecording("/home/nao/temp.ogg"); 
+                audio.startMicrophonesRecording("/home/nao/temp.ogg");
+                isRecording = true;
             } 
         } 
  
@@ -101,7 +104,8 @@ e.ToString());
                     bgWorker.RunWorkerCompleted += bgWorker_WorkerCompleted; 
  
                     // Run the Background Worker 
-                    bgWorker.RunWorkerAsync(); 
+                    bgWorker.RunWorkerAsync();
+                    isRecording = false;
                 } 
  
             } 

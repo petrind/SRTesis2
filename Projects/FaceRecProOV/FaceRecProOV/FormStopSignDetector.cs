@@ -42,7 +42,7 @@ namespace MultiFaceRec
 
         //signdetector
         static Image img2;
-        PointDetector stopDetector;
+        SignDetector stopDetector;
         List<Image<Gray, Byte>> stopSignList = new List<Image<Gray, Byte>>();
         List<Rectangle> boxList = new List<Rectangle>();
         List<Contour<Point>> contourSignFound=new List<Contour<Point>>();
@@ -71,7 +71,7 @@ namespace MultiFaceRec
                 mc = new MessageClient();
                 curDir = Directory.GetCurrentDirectory();
                 img2 = Image.FromFile(String.Format("{0}/Resources/ImageStop/StopSignNorthAmerican.png", Directory.GetCurrentDirectory()));
-                stopDetector = new PointDetector();                                
+                stopDetector = new SignDetector(new Image<Bgr, byte>(new Bitmap(img2)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC));                                
             }
             catch (Exception e)
             {
@@ -152,7 +152,7 @@ namespace MultiFaceRec
                 stopSignList.Clear();
                 contourSignFound.Clear();
                 //contourSignFound = new List<Contour<Point>>();
-                stopDetector.DetectPointBoard(currentFrame, stopSignList, boxList, contourSignFound);
+                stopDetector.DetectStopSign(currentFrame, stopSignList, boxList, contourSignFound);
             }
             catch (Exception ex)
             {
@@ -239,66 +239,7 @@ namespace MultiFaceRec
             Process.Start("Donate.html");
         }
              
-         /// <summary>
-        /// http://www.codeproject.com/Articles/12286/Simple-Client-server-Interactions-using-C
-        /// </summary>
-        class MessageClientFaceRecognition
-        {
-            bool mcConnect = false;
-            public delegate void ImageRetrievedHandler(object sender, EventArgs e);
-            public event ImageRetrievedHandler ImageRetrieved;
-            void OnImageRetrieved(EventArgs e)
-            {
-                if (ImageRetrieved != null)
-                    ImageRetrieved(this, e);
-            }
-
-            byte[] ba;
-            public bool updated = false;
-            ClientInfo client;
-
-            public void Start()
-            {
-                Socket sock = Sockets.CreateTCPSocket("localhost", 2345);
-                client = new ClientInfo(sock, false); // Don't start receiving yet
-                client.MessageType = MessageType.CodeAndLength;
-                client.OnReadMessage += new ConnectionReadMessage(ReadMessage);
-                client.BeginReceive();
-                mcConnect = true;
-            }
-
-
-            void ReadMessage(ClientInfo ci, uint code, byte[] buf, int len)
-            {
-                if (code == ClientInfo.ImageCodeUpper)
-                {
-                    Console.WriteLine("Message length: " + len + ", code " + code.ToString("X8") + ", content:");
-                    ba = new byte[len];
-                    Array.Copy(buf, ba, len);
-                    //Console.WriteLine("  " + ByteBuilder.FormatParameter(new Parameter(ba, ParameterType.Byte)));
-                    updated = true;
-                    OnImageRetrieved(EventArgs.Empty);
-                }
-            }
-            public void sendCommand(string command)
-            {
-                client.SendMessage(ClientInfo.CommandCode, Encoding.UTF8.GetBytes(command));
-            }
-            public void sendVoice(string command)
-            {
-                client.SendMessage(ClientInfo.VoiceCode, Encoding.UTF8.GetBytes(command));
-            }
-            public bool isconnect()
-            {
-                return mcConnect;
-            }
-            public byte[] getByte()
-            {
-                updated = false;
-                return ba;
-            }
-
-        }
+         
 
         private void StopSignDetector_Load(object sender, EventArgs e)
         {

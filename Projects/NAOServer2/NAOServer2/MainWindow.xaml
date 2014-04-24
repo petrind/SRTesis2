@@ -16,6 +16,5 @@ Width="90" MaxLines="1" MaxLength="15"/>
         
         <Label Content="NAO IP:" HorizontalAlignment="Left" Margin="121,75,0,0" 
 VerticalAlignment="Top"/>
-
     </Grid>
 </Window>

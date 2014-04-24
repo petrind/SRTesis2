@@ -65,6 +65,10 @@ namespace MultiFaceRec
         {
             client.SendMessage(ClientInfo.CommandCode, Encoding.UTF8.GetBytes(command));
         }
+        public void sendMoveTo(float x, float y,float theta)
+        {
+            client.SendMessage(ClientInfo.moveToCode, Encoding.UTF8.GetBytes(x+","+y+","+theta));
+        }
         public void sendVoice(string command)
         {
             client.SendMessage(ClientInfo.VoiceCode, Encoding.UTF8.GetBytes(command));

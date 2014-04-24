@@ -15,7 +15,7 @@ namespace MultiFaceRec
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrameShooterDistance());
+            Application.Run(new FrameShooterCameraCalibNao());
         }
     }
 }

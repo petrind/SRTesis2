@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Net;
-using System.Net.Sockets;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -18,11 +16,10 @@ using System.IO;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Emgu.CV.Util;
-using RedCorona.Net;
 
 namespace MultiFaceRec
 {
-    public partial class FormCameraCalibNao : Form
+    public partial class FrameShooterCameraCalib : Form
     {
         #region Display and aquaring chess board info
         Capture _Capture; // capture device
@@ -58,13 +55,10 @@ namespace MultiFaceRec
 
         #endregion
 
-        MessageClient mc = new MessageClient();
-        Boolean useNao = false, useWebCam=false;
-
         /// <summary>
         /// loading of the form
         /// </summary>
-        public FormCameraCalibNao()
+        public FrameShooterCameraCalib()
         {
             try
             {
@@ -81,7 +75,17 @@ namespace MultiFaceRec
             {
                 line_colour_array[i] = new Bgr(R.Next(0, 255), R.Next(0, 255), R.Next(0, 255));
             }
-            
+            //set up cature as normal
+            try
+            {
+                _Capture = new Capture();
+                _Capture.ImageGrabbed += new Emgu.CV.Capture.GrabEventHandler(_Capture_ImageGrabbed);
+                _Capture.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         /// <summary>
@@ -92,22 +96,7 @@ namespace MultiFaceRec
         void _Capture_ImageGrabbed(object sender, EventArgs e)
         {
             //lets get a frame from our capture device
-            if (useWebCam)
-            {
-                img = _Capture.RetrieveBgrFrame();
-            }
-            else if (useNao && mc.isconnect())
-            {
-                
-                {
-                    //while (!mc.updatedUpper)
-                    //{ }
-                    //img = new Image<Bgr, byte>(new Bitmap(Image.FromStream(new MemoryStream(mc.getByte(0))))).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                    while (!mc.updatedUpper)
-                    { }
-                    img = new Image<Bgr, byte>(new Bitmap(Image.FromStream(new MemoryStream(mc.getByte(0))))).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                }
-            } 
+            img = _Capture.RetrieveBgrFrame();
             Gray_Frame = img.Convert<Gray,Byte>();
 
             //apply chess board detection
@@ -203,7 +192,7 @@ namespace MultiFaceRec
                 //remap the image to the particular intrinsics
                 //In the current version of EMGU any pixel that is not corrected is set to transparent allowing the original image to be displayed if the same
                 //image is mapped backed, in the future this should be controllable through the flag '0'
-                    Image<Bgr, Byte> temp = img.CopyBlank();
+                Image<Bgr, Byte> temp = img.CopyBlank();
                 CvInvoke.cvRemap(img, temp, Map1, Map2, 0, new MCvScalar(0));
 
                 //added for corner drawing
@@ -382,48 +371,8 @@ namespace MultiFaceRec
         /// <param name="e"></param>
         protected override void OnClosing(CancelEventArgs e)
         {
-            if (useWebCam)
-            {
-                _Capture.Stop();
-                _Capture.Dispose();
-            }
-            else if (useNao)
-            {
-                mc = null;
-            }
-
+            _Capture.Stop();
+            _Capture.Dispose();
         }
-
-        private void useNaoButton_Click(object sender, EventArgs e)
-        {
-            mc.Start();
-            useNao = true;
-            useWebCam = false;
-            useNaoButton.Enabled = false;
-            useWebCamButton.Enabled = true;
-            Application.Idle += new EventHandler(_Capture_ImageGrabbed);
-        }
-
-        private void useWebCam_Click(object sender, EventArgs e)
-        {
-            //set up cature as normal
-            useWebCam= true;
-            useNao = false;
-            try
-            {
-                _Capture = new Capture();
-                _Capture.ImageGrabbed += new Emgu.CV.Capture.GrabEventHandler(_Capture_ImageGrabbed);
-                _Capture.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            
-            useWebCamButton.Enabled = false;
-            useNaoButton.Enabled = true;
-        }
-        
-        
     }
 }

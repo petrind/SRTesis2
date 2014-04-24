@@ -28,7 +28,8 @@ namespace NAO_Camera_WPF
                 // give joints stiffness 
                 naoMotion.stiffnessInterpolation("Head", 1.0f, 1.0f); 
                 naoMotion.stiffnessInterpolation("LArm", 1.0f, 1.0f); 
-                naoMotion.stiffnessInterpolation("RArm", 1.0f, 1.0f); 
+                naoMotion.stiffnessInterpolation("RArm", 1.0f, 1.0f);
+                naoMotion.setStiffnesses("Body", 1f);
             } 
             catch (Exception e) 
             { 
@@ -45,7 +46,8 @@ namespace NAO_Camera_WPF
                     // unsubscribe so the NAO knows we do not need data from the Motion anymore                     
                     naoMotion.stiffnessInterpolation("Head", 0f, 0f);
                     naoMotion.stiffnessInterpolation("LArm", 0f, 0f);
-                    naoMotion.stiffnessInterpolation("RArm", 0f, 0f); 
+                    naoMotion.stiffnessInterpolation("RArm", 0f, 0f);
+                    
                 }
             }
             catch
@@ -159,7 +161,18 @@ namespace NAO_Camera_WPF
                 MessageBox.Show("Exception occurred Naomotion movejoint, error log in C:\\NAOserver\\exception.txt"); 
                 System.IO.File.WriteAllText(@"C:\\NAOserver\\exception.txt",e.ToString()); 
             } 
-        } 
+        }
+        /// <summary>
+        /// Move to Coordinate
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="theta"></param>
+        public void moveTo(float x, float y, float theta)
+        {
+            naoMotion.moveTo(x, y,theta);
+        }
+        
     } 
 } 
  
