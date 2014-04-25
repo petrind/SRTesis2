@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CameraCalibration.cs" />
+    <Compile Include="PointDetectorBackup.cs" />
     <Compile Include="FrameShooterShape.cs">
       <SubType>Form</SubType>
     </Compile>

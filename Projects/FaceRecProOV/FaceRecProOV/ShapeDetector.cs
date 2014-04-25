@@ -89,7 +89,7 @@ namespace MultiFaceRec
         /// <param name="boxList"></param>
         /// <param name="contours"></param>
         /// <param name="color">1=dark blue, 2 = pink, 3 = light green, 4 = purple, 5 = black, 6 = white</param>
-        private void FindShape(Image<Bgr, byte> img, List<Image<Gray, Byte>> stopSignList, List<Rectangle> boxList, Contour<Point> contours, int color)
+        private void FindRect(Image<Bgr, byte> img, List<Image<Gray, Byte>> stopSignList, List<Rectangle> boxList, Contour<Point> contours, int color)
         {
             int i=0;
             MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_PLAIN, 0.8, 0.8);
@@ -147,7 +147,7 @@ namespace MultiFaceRec
             
         }
 
-        public void DetectShape(Image<Bgr, byte> img, List<Image<Gray, Byte>> stopSignList, List<Rectangle> boxList, List<Contour<Point>> contourSignFound)
+        public void DetectRect(Image<Bgr, byte> img, List<Image<Gray, Byte>> stopSignList, List<Rectangle> boxList, List<Contour<Point>> contourSignFound)
         {
             imagecolor = img;
             joinContour.Clear();
@@ -166,7 +166,7 @@ namespace MultiFaceRec
                    Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_SIMPLE,
                    Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_TREE,
                    stor);
-                FindShape(img, stopSignList, boxList, contours, 5);
+                FindRect(img, stopSignList, boxList, contours, 5);
             }
             CvInvoke.cvAnd(imageGray, imageSelector, imageGray, IntPtr.Zero);
             using (Image<Gray, Byte> cannySelector = imageSelector.Canny(new Gray(100), new Gray(50)))//Canny(100,50))
@@ -239,23 +239,24 @@ namespace MultiFaceRec
             imageGray.Draw(lines[3], new Gray(100), 2);
             
             //areas.Clear();
-            //Image<Gray, Byte> smoothedWhiteMask = GetColorPixelMask(smoothImg, 90, 120, 10, 255, 185, 255);
-            //imageGray = smoothedWhiteMask;
+            Image<Gray, Byte> smoothedWhiteMask = GetColorPixelMask(smoothImg, 0, 180, 0, 94, 92, 255);
+            imageGray = smoothedWhiteMask;
 
             //Use Dilate followed by Erode to eliminate small gaps in some countour.
-            //smoothedRedMask._Dilate(1);
-            //smoothedRedMask._Erode(1);
+            smoothedWhiteMask._Dilate(1);
+            smoothedWhiteMask._Erode(1);
+            CvInvoke.cvAnd(smoothedWhiteMask, imageSelector, smoothedWhiteMask, IntPtr.Zero);
 
-            //using (Image<Gray, Byte> canny = smoothedWhiteMask.Canny(new Gray(100), new Gray(50)))//Canny(100,50))
-            //using (MemStorage stor = new MemStorage())
-            //{
-            //    Contour<Point> contours = canny.FindContours(
-            //       Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_SIMPLE,
-            //       Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_TREE,
-            //       stor);
-            //    FindShape(img, stopSignList, boxList, contours);
-            //}
-            //CvInvoke.cvShowImage("Image White", smoothedWhiteMask);
+            using (Image<Gray, Byte> canny = smoothedWhiteMask.Canny(new Gray(100), new Gray(50)))//Canny(100,50))
+            using (MemStorage stor = new MemStorage())
+            {
+                Contour<Point> contours = canny.FindContours(
+                   Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_SIMPLE,
+                   Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_TREE,
+                   stor);
+                FindRect(img, stopSignList, boxList, contours,6);
+            }
+            CvInvoke.cvShowImage("Image White", smoothedWhiteMask);
         }
 
         protected override void DisposeObject()

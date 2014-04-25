@@ -49,6 +49,7 @@ namespace MultiFaceRec
             this.tipeLabel = new System.Windows.Forms.Label();
             this.tipeTextBox = new System.Windows.Forms.TextBox();
             this.connectLumenButton = new System.Windows.Forms.Button();
+            this.RecognizeColorObjectButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxUpper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxUpperResult)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@ namespace MultiFaceRec
             // ButtonWebcam
             // 
             this.ButtonWebcam.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ButtonWebcam.Location = new System.Drawing.Point(657, 354);
+            this.ButtonWebcam.Location = new System.Drawing.Point(657, 384);
             this.ButtonWebcam.Name = "ButtonWebcam";
             this.ButtonWebcam.Size = new System.Drawing.Size(181, 31);
             this.ButtonWebcam.TabIndex = 18;
@@ -78,13 +79,13 @@ namespace MultiFaceRec
             this.ImageBoxUpperResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ImageBoxUpperResult.Location = new System.Drawing.Point(331, 12);
             this.ImageBoxUpperResult.Name = "ImageBoxUpperResult";
-            this.ImageBoxUpperResult.Size = new System.Drawing.Size(320, 239);
+            this.ImageBoxUpperResult.Size = new System.Drawing.Size(320, 240);
             this.ImageBoxUpperResult.TabIndex = 5;
             this.ImageBoxUpperResult.TabStop = false;
             // 
             // FileNameTextBox
             // 
-            this.FileNameTextBox.Location = new System.Drawing.Point(657, 328);
+            this.FileNameTextBox.Location = new System.Drawing.Point(657, 358);
             this.FileNameTextBox.Name = "FileNameTextBox";
             this.FileNameTextBox.Size = new System.Drawing.Size(182, 20);
             this.FileNameTextBox.TabIndex = 19;
@@ -92,7 +93,7 @@ namespace MultiFaceRec
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(657, 299);
+            this.button1.Location = new System.Drawing.Point(657, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
@@ -126,11 +127,11 @@ namespace MultiFaceRec
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(657, 229);
+            this.button2.Location = new System.Drawing.Point(657, 221);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 36);
             this.button2.TabIndex = 23;
-            this.button2.Text = "Shoot Frame";
+            this.button2.Text = "Board Recog";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.frameShoot_Click);
             // 
@@ -201,7 +202,7 @@ namespace MultiFaceRec
             // connectLumenButton
             // 
             this.connectLumenButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.connectLumenButton.Location = new System.Drawing.Point(657, 262);
+            this.connectLumenButton.Location = new System.Drawing.Point(657, 292);
             this.connectLumenButton.Name = "connectLumenButton";
             this.connectLumenButton.Size = new System.Drawing.Size(76, 31);
             this.connectLumenButton.TabIndex = 32;
@@ -209,11 +210,22 @@ namespace MultiFaceRec
             this.connectLumenButton.UseVisualStyleBackColor = true;
             this.connectLumenButton.Click += new System.EventHandler(this.connectLumenButton_Click);
             // 
+            // button3
+            // 
+            this.RecognizeColorObjectButton.Location = new System.Drawing.Point(657, 263);
+            this.RecognizeColorObjectButton.Name = "button3";
+            this.RecognizeColorObjectButton.Size = new System.Drawing.Size(75, 23);
+            this.RecognizeColorObjectButton.TabIndex = 33;
+            this.RecognizeColorObjectButton.Text = "Peon Recog";
+            this.RecognizeColorObjectButton.UseVisualStyleBackColor = true;
+            this.RecognizeColorObjectButton.Click += new System.EventHandler(this.RecognizeColorPeon);
+            // 
             // FrameShooterDistance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 516);
+            this.Controls.Add(this.RecognizeColorObjectButton);
             this.Controls.Add(this.connectLumenButton);
             this.Controls.Add(this.tipeTextBox);
             this.Controls.Add(this.tipeLabel);
@@ -261,6 +273,7 @@ namespace MultiFaceRec
         private Label tipeLabel;
         private TextBox tipeTextBox;
         private Button connectLumenButton;
+        private Button RecognizeColorObjectButton;
 
                           
     }

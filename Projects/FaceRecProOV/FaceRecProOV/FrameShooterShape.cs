@@ -219,7 +219,7 @@ namespace MultiFaceRec
                 boxList.Clear();
                 stopSignList.Clear();
                 //contourSignFound.Clear();                
-                stopDetector.DetectShape(currentFrame, stopSignList, boxList, contourSignFound);
+                stopDetector.DetectRect(currentFrame, stopSignList, boxList, contourSignFound);
             }
             catch (Exception ex)
             {

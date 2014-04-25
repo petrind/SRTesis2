@@ -222,22 +222,19 @@ namespace MultiFaceRec
             {
                 boxList.Clear();
                 stopSignList.Clear();
-                //contourSignFound.Clear();                
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: Error FrameShoot_Click. Original error: " + ex.Message);
-            }
-            //DisDetector.DetectPointBoard(currentFrameU, stopSignList, boxList, contourSignFound);
+            }           
             DisDetector.recognizeBoard(currentFrameU);
             if (useNao && mc.isconnect())
             {
                 try
                 {
-                    float dy = -(DisDetector.colorPoints[0].point.X ) / 100;
-                    float dx = 0;// (DisDetector.z - 50) / 100;
-                    mc.sendMoveTo(dx, dy, 0);
+                    //float dy = -(DisDetector.colorPoints[0].point.X ) / 100;
+                    //float dx = 0;// (DisDetector.z - 50) / 100;
+                    //mc.sendMoveTo(dx, dy, 0);
                 }
                 catch
                 {
@@ -314,6 +311,11 @@ namespace MultiFaceRec
         private void FileNameTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RecognizeColorPeon(object sender, EventArgs e)
+        {
+            DisDetector.RecognizeColorObject(currentFrameU);
         }
 
 
