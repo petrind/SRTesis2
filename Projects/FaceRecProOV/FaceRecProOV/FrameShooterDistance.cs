@@ -316,6 +316,7 @@ namespace MultiFaceRec
         private void RecognizeColorPeon(object sender, EventArgs e)
         {
             DisDetector.RecognizeColorObject(currentFrameU);
+            ImageBoxUpperResult.Image = DisDetector.imageGray;
         }
 
 
