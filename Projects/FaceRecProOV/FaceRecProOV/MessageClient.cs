@@ -31,7 +31,7 @@ namespace MultiFaceRec
 
         public void Start()
         {
-            Socket sock = Sockets.CreateTCPSocket("localhost", 2345);
+            Socket sock = Sockets.CreateTCPSocket("167.205.66.53", 2345);
             client = new ClientInfo(sock, false); // Don't start receiving yet
             client.MessageType = MessageType.CodeAndLength;
             client.OnReadMessage += new ConnectionReadMessage(ReadMessage);

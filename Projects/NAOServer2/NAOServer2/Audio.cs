@@ -8,8 +8,7 @@ using System.Collections;
 using System.IO; 
 using System.Windows; 
 using System.ComponentModel; 
-using Aldebaran.Proxies; 
-using WinSCP;
+using Aldebaran.Proxies;
 using NAOServer2.ServiceReference1;
 
  
