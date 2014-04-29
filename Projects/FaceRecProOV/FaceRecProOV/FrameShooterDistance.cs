@@ -244,14 +244,6 @@ namespace MultiFaceRec
             
             ImageBoxUpperResult.Image = DisDetector.imageGray;
             
-            try
-            {
-                area.Text = DisDetector.areas[0].ToString();
-            }
-            catch
-            {
-                area.Text = "No Sign Detected";
-            }
             curDir = Directory.GetCurrentDirectory();
             dirSave = curDir + "/Resources/dirSave";
             if (!Directory.Exists(dirSave))

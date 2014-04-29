@@ -42,21 +42,13 @@ namespace MultiFaceRec
     {
         /// <summary> image that already smoothed will be output</summary>
         public Image<Gray, Byte> imageGray;
-        /// <summary> image for processing</summary>
-        Image<Gray, Byte> Gray_Frame;
+        /// <summary> image for processing</summary>        
         private Image<Gray, Byte> imageSelector;
         public int imgWidth = 320, imgHeight = 240;
-        public Image<Bgr, Byte> imagecolor;
-        public List<double> areas = new List<double>();
+        public Image<Bgr, Byte> imagecolor;        
         public List<PointF> centerPoints = new List<PointF>();
         public point3DF[] Point3D;//store 3D point
-        PointF[] corners; //corners found from chessboard
-        PointF[] boardPoint = new PointF[64];
-        PointF[] boardPoint3D = new PointF[64];
-        public List<colorObject> colorObjects = new List<colorObject>();
-        const int width = 8;//9 //width of chessboard no. squares in width - 1
-        const int height = 5;//6 // heght of chess board no. squares in heigth - 1
-        Size patternSize = new Size(width, height); //size of chess board to be detected
+        public List<colorObject> colorObjects = new List<colorObject>();        
         double dppTop = 5.13967/1.86; // distance constant for 310/pix * dpp = distance
         float fxTop = 674.122f, fyTop = 684.541f, cxTop = 147.790f, cyTop = 121.238f;
         double dppBottom = 0; // distance constant for 310/pix * dpp = distance
@@ -65,11 +57,14 @@ namespace MultiFaceRec
         private MemStorage _rectStorage;
         private Contour<Point> rect;
         double ratio;
-        private MCvBox2D[] minBoxesBlack = new MCvBox2D[4];
-        private PointF[] pointBlack = new PointF[4];        
+        private MCvBox2D[] minBoxesBlack = new MCvBox2D[5];
+        private PointF[] pointBlack = new PointF[5];
+        private MCvBox2D[] minBoxesWhite = new MCvBox2D[5];
+        private PointF[] pointWhite = new PointF[5];        
         private MemStorage joinContourStorage;        
         private Contour<Point> joinContour;
         double shapeRatio;
+        int boardtype = 0;//0 = 5b4w; 1 = 4b5w
 
         public PointDetector()
         {
@@ -124,9 +119,6 @@ namespace MultiFaceRec
                 return channels[0];
             }
         }
-        
-
-        
 
         /// <summary>
         /// 
@@ -152,8 +144,15 @@ namespace MultiFaceRec
                     if (shapeRatio < 0.1 && areaRatio < 1.2)
                     {
                         Rectangle box = contours.BoundingRectangle;
-                        pointBlack[i] = c;
-                        minBoxesBlack[i] = minAreaRect;
+                        if(color==5){//black
+                            pointBlack[i] = c;
+                            minBoxesBlack[i] = minAreaRect;
+                        }
+                        else if (color == 6) //white
+                        {
+                            pointWhite[i] = c;
+                            minBoxesWhite[i] = minAreaRect;
+                        }
                         i++;
 
                     }
@@ -161,8 +160,16 @@ namespace MultiFaceRec
                     else if (areaRatio < 1.3 && shapeRatio < 0.5)
                     {
                         Rectangle box = contours.BoundingRectangle;
-                        pointBlack[i] = c;
-                        minBoxesBlack[i] = minAreaRect;
+                        if (color == 5)
+                        {
+                            pointBlack[i] = c;
+                            minBoxesBlack[i] = minAreaRect;
+                        }
+                        else if (color == 6) //white
+                        {
+                            pointWhite[i] = c;
+                            minBoxesWhite[i] = minAreaRect;
+                        }
                         i++;
                     }
                     else
@@ -174,8 +181,6 @@ namespace MultiFaceRec
         {
             for (; contours != null; contours = contours.HNext)
             {
-                //draw box from any contour
-
                 contours.ApproxPoly(contours.Perimeter * 0.02, 0, contours.Storage);
                 if (contours.Area > 20)
                 {
@@ -189,9 +194,6 @@ namespace MultiFaceRec
                     p.X = (c.X * 50 - cxTop * 50) / fxTop;
                     p.Y = (c.Y * 50 - cyTop * 50) / fyTop;
                     colorObjects.Add(new colorObject(p, color,contours.BoundingRectangle,zCalc(1,contours.BoundingRectangle.Width,1)));
-
-                    // detect the chessboard
-                    Gray_Frame = img.Convert<Gray, Byte>();//
                 }
             }
         }
@@ -236,41 +238,80 @@ namespace MultiFaceRec
             //   0
             // 1   2
             //   4
-            do
+            if (boardtype ==1)
             {
-                swapped = false;
-                for (int i = 0; i < 3; i++)
+                do
                 {
-                    if (pointBlack[i].Y > pointBlack[i + 1].Y)
+                    swapped = false;
+                    for (int i = 0; i < 3; i++)
                     {
-                        temp = pointBlack[i];
-                        tempbox = minBoxesBlack[i];
+                        if (pointBlack[i].Y > pointBlack[i + 1].Y)
+                        {
+                            temp = pointBlack[i];
+                            tempbox = minBoxesBlack[i];
 
-                        pointBlack[i] = pointBlack[i + 1];
-                        minBoxesBlack[i] = minBoxesBlack[i + 1];
+                            pointBlack[i] = pointBlack[i + 1];
+                            minBoxesBlack[i] = minBoxesBlack[i + 1];
 
-                        pointBlack[i + 1] = temp;
-                        minBoxesBlack[i + 1] = tempbox;
-                        swapped = true;
+                            pointBlack[i + 1] = temp;
+                            minBoxesBlack[i + 1] = tempbox;
+                            swapped = true;
+                        }
                     }
-                }
-            } while (swapped);
+                } while (swapped);
 
-            if (pointBlack[1].X > pointBlack[2].X)
-            {
-                temp = pointBlack[1];
-                tempbox = minBoxesBlack[1];
-                pointBlack[1] = pointBlack[2];
-                minBoxesBlack[1] = minBoxesBlack[2];
-                pointBlack[2] = temp;
-                minBoxesBlack[2] = tempbox;
+                if (pointBlack[1].X > pointBlack[2].X)
+                {
+                    temp = pointBlack[1];
+                    tempbox = minBoxesBlack[1];
+                    pointBlack[1] = pointBlack[2];
+                    minBoxesBlack[1] = minBoxesBlack[2];
+                    pointBlack[2] = temp;
+                    minBoxesBlack[2] = tempbox;
+                }
             }
-            MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_PLAIN, 0.8, 0.8);
-            //for (int i=0; i < 4; i++)
-            //{
-            //    imageGray.Draw("    " + i, ref f, new Point((int)pointBlack[i].X, (int)pointBlack[i].Y), new Gray(200));
-            //    imageGray.Draw(minBoxesBlack[i], new Gray(100), 2);
-            //}
+            else if (boardtype == 0)
+            {
+                do
+                {
+                    swapped = false;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (pointBlack[i].Y > pointBlack[i + 1].Y)
+                        {
+                            temp = pointBlack[i];
+                            tempbox = minBoxesBlack[i];
+
+                            pointBlack[i] = pointBlack[i + 1];
+                            minBoxesBlack[i] = minBoxesBlack[i + 1];
+
+                            pointBlack[i + 1] = temp;
+                            minBoxesBlack[i + 1] = tempbox;
+                            swapped = true;
+                        }
+                    }
+                } while (swapped);
+
+                if (pointBlack[0].X > pointBlack[1].X)
+                {
+                    temp = pointBlack[1];
+                    tempbox = minBoxesBlack[1];
+                    pointBlack[1] = pointBlack[2];
+                    minBoxesBlack[1] = minBoxesBlack[2];
+                    pointBlack[2] = temp;
+                    minBoxesBlack[2] = tempbox;
+                }
+                if (pointBlack[4].X > pointBlack[3].X)
+                {
+                    temp = pointBlack[1];
+                    tempbox = minBoxesBlack[1];
+                    pointBlack[1] = pointBlack[2];
+                    minBoxesBlack[1] = minBoxesBlack[2];
+                    pointBlack[2] = temp;
+                    minBoxesBlack[2] = tempbox;
+                }
+            }
+            MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_PLAIN, 0.8, 0.8);            
             LineSegment2DF[] lines = new LineSegment2DF[9];
 
 
