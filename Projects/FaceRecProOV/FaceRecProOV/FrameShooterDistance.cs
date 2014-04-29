@@ -37,20 +37,18 @@ namespace MultiFaceRec
     public partial class FrameShooterDistance : Form
     {
         //declaration from PS for image outside        
-        Image imgU;
-        Image imgL;
+        Image imgU;        
         string curDir;
         string dirSave;
         MessageClient mc;
         Capture grabber;
-
+        bool maskSetting=false;
         bool useNao = false;
         bool useWebcam = false;
         List<string> calledName = new List<string>();
         
 
-        //signdetector
-        static Image img2;
+        //signdetector        
         PointDetector DisDetector;
         List<Image<Gray, Byte>> stopSignList = new List<Image<Gray, Byte>>();
         List<Rectangle> boxList = new List<Rectangle>();
@@ -67,11 +65,7 @@ namespace MultiFaceRec
         List<Image<Gray, byte>> trainingImages = new List<Image<Gray, byte>>();
         List<string> labels= new List<string>();
         List<string> NamePersons = new List<string>();
-        int ContTrain, NumLabels, t;
-        
-        
         string name, names = null;
-
 
         public FrameShooterDistance()
         {
@@ -172,7 +166,11 @@ namespace MultiFaceRec
                 //img = Image.FromFile(String.Format("{0}/Resources/loading.jpg", curDir));
                 //currentFrame = new Image<Bgr, byte>(new Bitmap(img)).Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
             }
-            
+            if (maskSetting)
+            {
+                Image<Bgr, byte> imgMasking = new Image<Bgr, byte>("C:\\NAOPengukuran\\DeafultMask.jpg").Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                CvInvoke.cvAnd(currentFrameU, imgMasking, currentFrameU, IntPtr.Zero);
+            }
             ImageBoxUpper.Image = currentFrameU;
             
         }
@@ -244,46 +242,42 @@ namespace MultiFaceRec
             
             ImageBoxUpperResult.Image = DisDetector.imageGray;
             
+            
             curDir = Directory.GetCurrentDirectory();
             dirSave = curDir + "/Resources/dirSave";
-            if (!Directory.Exists(dirSave))
-            {
-                Directory.CreateDirectory(dirSave);
-            }
-            int fileCount = Directory.GetFiles(dirSave).Length;
-            try
-            {
-                DisDetector.imageGray.Save(dirSave + "/" + fileCount.ToString() + " - area-" + area.Text + ".bmp");
-            }
-            catch { }
+            //if (!Directory.Exists(dirSave))
+            //{
+            //    Directory.CreateDirectory(dirSave);
+            //}
+            //int fileCount = Directory.GetFiles(dirSave).Length;
+            //try
+            //{
+            //    DisDetector.imageGray.Save(dirSave + "/" + fileCount.ToString() + " - area-" + area.Text + ".bmp");
+            //}
+            //catch { }
 
             //before your loop
-            var csv = new StringBuilder();
-            string filePath = dirSave + "/data.csv";
-            var newLine="";
+            //var csv = new StringBuilder();
+            //string filePath = dirSave + "/data.csv";
+            //var newLine="";
 
-            if (!File.Exists(filePath))
-            {
-                newLine = string.Format("{0},{1},{2},{3},{4},{5}","tipe", "jarak", "sudutH","sudutV","area", Environment.NewLine);
-                csv.Append(newLine);
-                File.WriteAllText(filePath, csv.ToString());
-                csv.Clear();
-            }
+            //if (!File.Exists(filePath))
+            //{
+            //    newLine = string.Format("{0},{1},{2},{3},{4},{5}","tipe", "jarak", "sudutH","sudutV","area", Environment.NewLine);
+            //    csv.Append(newLine);
+            //    File.WriteAllText(filePath, csv.ToString());
+            //    csv.Clear();
+            //}
 
-            //in your loop
-            string tipe = tipeTextBox.Text;
-            string jarak = JarakTextBox.Text;
-            string sudutH = SudutHTextBox.Text;
-            string sudutV = SudutVTextBox.Text;
-            string areaValue = area.Text;
-            newLine = string.Format("{0},{1},{2},{3},{4},{5}",tipe, jarak, sudutH, sudutV, areaValue, Environment.NewLine);
-            //csv.Append(newLine);
-            foreach (PointF p in DisDetector.centerPoints)
-            {
-                Console.Write("X:"+p.X + " Y:" + p.Y);
-            }
-            //after your loop
-            File.AppendAllText(filePath, newLine);
+            ////in your loop
+            //newLine = string.Format("{0},{1},{2},{3},{4},{5}",tipe, jarak, sudutH, sudutV, areaValue, Environment.NewLine);
+            ////csv.Append(newLine);
+            //foreach (PointF p in DisDetector.centerPoints)
+            //{
+            //    Console.Write("X:"+p.X + " Y:" + p.Y);
+            //}
+            ////after your loop
+            //File.AppendAllText(filePath, newLine);
         }
 
 
@@ -305,9 +299,22 @@ namespace MultiFaceRec
 
         }
 
-        private void RecognizeColorPeon(object sender, EventArgs e)
+        private void PeonRecog_Click(object sender, EventArgs e)
         {
             DisDetector.RecognizeColorObject(currentFrameU);
+            ImageBoxUpperResult.Image = DisDetector.imageGray;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (maskSetting)
+            {
+                maskSetting = false;
+            }
+            else
+            {
+                maskSetting = true;
+            }
         }
 
 

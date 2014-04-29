@@ -57,44 +57,32 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.dll</HintPath>
+    <Reference Include="Emgu.CV">
+      <HintPath>..\..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2008, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.DebuggerVisualizers.VS2008.dll</HintPath>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2010">
+      <HintPath>..\..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.DebuggerVisualizers.VS2010.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2010, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.DebuggerVisualizers.VS2010.dll</HintPath>
+    <Reference Include="Emgu.CV.GPU">
+      <HintPath>..\..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.GPU.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.GPU, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.GPU.dll</HintPath>
+    <Reference Include="Emgu.CV.ML">
+      <HintPath>..\..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.ML.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.ML, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.ML.dll</HintPath>
+    <Reference Include="Emgu.CV.OCR">
+      <HintPath>..\..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.OCR.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.OCR, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.OCR.dll</HintPath>
+    <Reference Include="Emgu.CV.Stitching">
+      <HintPath>..\..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.Stitching.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.Stitching, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.Stitching.dll</HintPath>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>..\..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.UI, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.CV.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.Util, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.Util.dll</HintPath>
+    <Reference Include="Emgu.Util">
+      <HintPath>..\..\..\..\..\..\..\..\Emgu\emgucv-windows-x86 2.4.0.1717\bin\Emgu.Util.dll</HintPath>
     </Reference>
     <Reference Include="naoqi-dotnet4">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Aldebaran\NAOqi.Net 1.14.1.16\naoqi-dotnet4.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Aldebaran\NAOqi.Net 1.14.1.16\naoqi-dotnet4.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -296,15 +284,7 @@
     <Content Include="cvextern_gpu.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Feature.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\ImageStop\HexagonRed.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="IEShims.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="IEShims.dll" />
     <Content Include="npp32_42_9.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -359,6 +339,12 @@
     <Content Include="opencv_videostab240.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Feature.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ImageStop\HexagonRed.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\ImageStop\HexagonBlue.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -387,6 +373,12 @@
     <Content Include="Resources\ImageStop\StopSignNorthAmerican.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="tbb.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tbb_debug.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\multiFaceRec.LanguageService\Service1.disco" />
     <None Include="Service References\multiFaceRec.LanguageService\configuration91.svcinfo" />
     <None Include="Service References\multiFaceRec.LanguageService\configuration.svcinfo" />
@@ -394,12 +386,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="tbb.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="tbb_debug.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

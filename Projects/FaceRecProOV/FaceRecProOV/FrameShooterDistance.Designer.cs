@@ -37,19 +37,10 @@ namespace MultiFaceRec
             this.FileNameTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.area = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.JarakLabel = new System.Windows.Forms.Label();
-            this.SudutHorizontalLabel = new System.Windows.Forms.Label();
-            this.SudutVertikalLabel = new System.Windows.Forms.Label();
-            this.JarakTextBox = new System.Windows.Forms.TextBox();
-            this.SudutHTextBox = new System.Windows.Forms.TextBox();
-            this.SudutVTextBox = new System.Windows.Forms.TextBox();
-            this.tipeLabel = new System.Windows.Forms.Label();
-            this.tipeTextBox = new System.Windows.Forms.TextBox();
             this.connectLumenButton = new System.Windows.Forms.Button();
             this.RecognizeColorObjectButton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxUpper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxUpperResult)).BeginInit();
             this.SuspendLayout();
@@ -105,26 +96,6 @@ namespace MultiFaceRec
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(657, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Area";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // area
-            // 
-            this.area.AutoSize = true;
-            this.area.Location = new System.Drawing.Point(659, 30);
-            this.area.Name = "area";
-            this.area.Size = new System.Drawing.Size(59, 13);
-            this.area.TabIndex = 22;
-            this.area.Text = "Area Value";
-            this.area.Click += new System.EventHandler(this.label2_Click);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(657, 221);
@@ -134,70 +105,6 @@ namespace MultiFaceRec
             this.button2.Text = "Board Recog";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.frameShoot_Click);
-            // 
-            // JarakLabel
-            // 
-            this.JarakLabel.AutoSize = true;
-            this.JarakLabel.Location = new System.Drawing.Point(660, 90);
-            this.JarakLabel.Name = "JarakLabel";
-            this.JarakLabel.Size = new System.Drawing.Size(33, 13);
-            this.JarakLabel.TabIndex = 24;
-            this.JarakLabel.Text = "Jarak";
-            // 
-            // SudutHorizontalLabel
-            // 
-            this.SudutHorizontalLabel.AutoSize = true;
-            this.SudutHorizontalLabel.Location = new System.Drawing.Point(660, 130);
-            this.SudutHorizontalLabel.Name = "SudutHorizontalLabel";
-            this.SudutHorizontalLabel.Size = new System.Drawing.Size(85, 13);
-            this.SudutHorizontalLabel.TabIndex = 25;
-            this.SudutHorizontalLabel.Text = "Sudut Horizontal";
-            // 
-            // SudutVertikalLabel
-            // 
-            this.SudutVertikalLabel.AutoSize = true;
-            this.SudutVertikalLabel.Location = new System.Drawing.Point(660, 179);
-            this.SudutVertikalLabel.Name = "SudutVertikalLabel";
-            this.SudutVertikalLabel.Size = new System.Drawing.Size(73, 13);
-            this.SudutVertikalLabel.TabIndex = 26;
-            this.SudutVertikalLabel.Text = "Sudut Vertikal";
-            // 
-            // JarakTextBox
-            // 
-            this.JarakTextBox.Location = new System.Drawing.Point(663, 107);
-            this.JarakTextBox.Name = "JarakTextBox";
-            this.JarakTextBox.Size = new System.Drawing.Size(78, 20);
-            this.JarakTextBox.TabIndex = 27;
-            // 
-            // SudutHTextBox
-            // 
-            this.SudutHTextBox.Location = new System.Drawing.Point(663, 145);
-            this.SudutHTextBox.Name = "SudutHTextBox";
-            this.SudutHTextBox.Size = new System.Drawing.Size(78, 20);
-            this.SudutHTextBox.TabIndex = 28;
-            // 
-            // SudutVTextBox
-            // 
-            this.SudutVTextBox.Location = new System.Drawing.Point(663, 195);
-            this.SudutVTextBox.Name = "SudutVTextBox";
-            this.SudutVTextBox.Size = new System.Drawing.Size(78, 20);
-            this.SudutVTextBox.TabIndex = 29;
-            // 
-            // tipeLabel
-            // 
-            this.tipeLabel.AutoSize = true;
-            this.tipeLabel.Location = new System.Drawing.Point(657, 51);
-            this.tipeLabel.Name = "tipeLabel";
-            this.tipeLabel.Size = new System.Drawing.Size(28, 13);
-            this.tipeLabel.TabIndex = 30;
-            this.tipeLabel.Text = "Tipe";
-            // 
-            // tipeTextBox
-            // 
-            this.tipeTextBox.Location = new System.Drawing.Point(663, 67);
-            this.tipeTextBox.Name = "tipeTextBox";
-            this.tipeTextBox.Size = new System.Drawing.Size(78, 20);
-            this.tipeTextBox.TabIndex = 31;
             // 
             // connectLumenButton
             // 
@@ -210,34 +117,35 @@ namespace MultiFaceRec
             this.connectLumenButton.UseVisualStyleBackColor = true;
             this.connectLumenButton.Click += new System.EventHandler(this.connectLumenButton_Click);
             // 
-            // button3
+            // RecognizeColorObjectButton
             // 
             this.RecognizeColorObjectButton.Location = new System.Drawing.Point(657, 263);
-            this.RecognizeColorObjectButton.Name = "button3";
+            this.RecognizeColorObjectButton.Name = "RecognizeColorObjectButton";
             this.RecognizeColorObjectButton.Size = new System.Drawing.Size(75, 23);
             this.RecognizeColorObjectButton.TabIndex = 33;
             this.RecognizeColorObjectButton.Text = "Peon Recog";
             this.RecognizeColorObjectButton.UseVisualStyleBackColor = true;
-            this.RecognizeColorObjectButton.Click += new System.EventHandler(this.RecognizeColorPeon);
+            this.RecognizeColorObjectButton.Click += new System.EventHandler(this.PeonRecog_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(657, 177);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 38);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Setting Mask";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // FrameShooterDistance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 516);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.RecognizeColorObjectButton);
             this.Controls.Add(this.connectLumenButton);
-            this.Controls.Add(this.tipeTextBox);
-            this.Controls.Add(this.tipeLabel);
-            this.Controls.Add(this.SudutVTextBox);
-            this.Controls.Add(this.SudutHTextBox);
-            this.Controls.Add(this.JarakTextBox);
-            this.Controls.Add(this.SudutVertikalLabel);
-            this.Controls.Add(this.SudutHorizontalLabel);
-            this.Controls.Add(this.JarakLabel);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.area);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.FileNameTextBox);
             this.Controls.Add(this.ImageBoxUpperResult);
@@ -261,19 +169,10 @@ namespace MultiFaceRec
         private System.Windows.Forms.TextBox FileNameTextBox;
         private System.Windows.Forms.Button button1;
         private OpenFileDialog openFileDialog1;
-        private Label label1;
-        private Label area;
         private Button button2;
-        private Label JarakLabel;
-        private Label SudutHorizontalLabel;
-        private Label SudutVertikalLabel;
-        private TextBox JarakTextBox;
-        private TextBox SudutHTextBox;
-        private TextBox SudutVTextBox;
-        private Label tipeLabel;
-        private TextBox tipeTextBox;
         private Button connectLumenButton;
         private Button RecognizeColorObjectButton;
+        private Button button3;
 
                           
     }

@@ -16,39 +16,40 @@ namespace MultiFaceRec
     }
     public struct colorObject
     {
-        public colorObject(PointF p, int c, Rectangle rect, float z)
+        public colorObject(float x, float y,float z, int c, Rectangle rect)
         {
-            point = p;
-            color = c;
-            this.rect = rect;
+            this.x = x;
+            this.y = y;
             this.z = z;
-        }
-        public colorObject(PointF p, int c, Rectangle rect)
-        {
-            point = p;
             color = c;
-            this.rect = rect;
-            this.z = 1;
+            this.rect = rect;            
         }
-        public PointF point;
-        public float z;
+        public float x, y, z;
         /// <summary>
         /// 1=dark blue, 2 = pink, 3 = light green, 4 = purple, 5 = black, 6 = white
         /// </summary>
         public int color;
-        public Rectangle rect = new Rectangle();
+        public Rectangle rect;
     }
     public class PointDetector : DisposableObject
     {
         /// <summary> image that already smoothed will be output</summary>
         public Image<Gray, Byte> imageGray;
-        /// <summary> image for processing</summary>        
+        /// <summary> image for processing</summary>
+        Image<Gray, Byte> Gray_Frame;
         private Image<Gray, Byte> imageSelector;
         public int imgWidth = 320, imgHeight = 240;
-        public Image<Bgr, Byte> imagecolor;        
+        public Image<Bgr, Byte> imageColor;
+        public List<double> areas = new List<double>();
         public List<PointF> centerPoints = new List<PointF>();
         public point3DF[] Point3D;//store 3D point
-        public List<colorObject> colorObjects = new List<colorObject>();        
+        PointF[] corners; //corners found from chessboard
+        PointF[] boardPoint = new PointF[64];
+        PointF[] boardPoint3D = new PointF[64];
+        public List<colorObject> colorObjects = new List<colorObject>();
+        const int width = 8;//9 //width of chessboard no. squares in width - 1
+        const int height = 5;//6 // heght of chess board no. squares in heigth - 1
+        Size patternSize = new Size(width, height); //size of chess board to be detected
         double dppTop = 5.13967/1.86; // distance constant for 310/pix * dpp = distance
         float fxTop = 674.122f, fyTop = 684.541f, cxTop = 147.790f, cyTop = 121.238f;
         double dppBottom = 0; // distance constant for 310/pix * dpp = distance
@@ -57,14 +58,11 @@ namespace MultiFaceRec
         private MemStorage _rectStorage;
         private Contour<Point> rect;
         double ratio;
-        private MCvBox2D[] minBoxesBlack = new MCvBox2D[5];
-        private PointF[] pointBlack = new PointF[5];
-        private MCvBox2D[] minBoxesWhite = new MCvBox2D[5];
-        private PointF[] pointWhite = new PointF[5];        
+        private MCvBox2D[] minBoxesBlack = new MCvBox2D[4];
+        private PointF[] pointBlack = new PointF[4];        
         private MemStorage joinContourStorage;        
         private Contour<Point> joinContour;
         double shapeRatio;
-        int boardtype = 0;//0 = 5b4w; 1 = 4b5w
 
         public PointDetector()
         {
@@ -119,6 +117,9 @@ namespace MultiFaceRec
                 return channels[0];
             }
         }
+        
+
+        
 
         /// <summary>
         /// 
@@ -144,15 +145,8 @@ namespace MultiFaceRec
                     if (shapeRatio < 0.1 && areaRatio < 1.2)
                     {
                         Rectangle box = contours.BoundingRectangle;
-                        if(color==5){//black
-                            pointBlack[i] = c;
-                            minBoxesBlack[i] = minAreaRect;
-                        }
-                        else if (color == 6) //white
-                        {
-                            pointWhite[i] = c;
-                            minBoxesWhite[i] = minAreaRect;
-                        }
+                        pointBlack[i] = c;
+                        minBoxesBlack[i] = minAreaRect;
                         i++;
 
                     }
@@ -160,16 +154,8 @@ namespace MultiFaceRec
                     else if (areaRatio < 1.3 && shapeRatio < 0.5)
                     {
                         Rectangle box = contours.BoundingRectangle;
-                        if (color == 5)
-                        {
-                            pointBlack[i] = c;
-                            minBoxesBlack[i] = minAreaRect;
-                        }
-                        else if (color == 6) //white
-                        {
-                            pointWhite[i] = c;
-                            minBoxesWhite[i] = minAreaRect;
-                        }
+                        pointBlack[i] = c;
+                        minBoxesBlack[i] = minAreaRect;
                         i++;
                     }
                     else
@@ -177,30 +163,42 @@ namespace MultiFaceRec
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="img"></param>
+        /// <param name="contours"></param>
+        /// <param name="color">1=dark blue, 2 = pink, 3 = light green, 4 = purple, 5 = black, 6 = white</param>
         private void FindColoredObject(Image<Bgr, byte> img, Contour<Point> contours, int color)
         {
             for (; contours != null; contours = contours.HNext)
             {
+                //draw box from any contour
+
                 contours.ApproxPoly(contours.Perimeter * 0.02, 0, contours.Storage);
                 if (contours.Area > 20)
                 {
                     PointF c = centerBox(contours.BoundingRectangle);
 
                     imageGray.Draw(new CircleF(c, 3), new Gray(150), 2);
-
+                    imageColor.Draw(new CircleF(c, 3), new Bgr(255, 255, 255), 1);
                     centerPoints.Add(c);
 
-                    PointF p = new PointF();
-                    p.X = (c.X * 50 - cxTop * 50) / fxTop;
-                    p.Y = (c.Y * 50 - cyTop * 50) / fyTop;
-                    colorObjects.Add(new colorObject(p, color,contours.BoundingRectangle,zCalc(1,contours.BoundingRectangle.Width,1)));
+                    PointF pReal = new PointF();
+                    float z = zCalc(2.4f, contours.BoundingRectangle.Width, 1);
+                    pReal.X = (c.X * z - cxTop * z) / fxTop;
+                    pReal.Y = (c.Y * z - cyTop * z) / fyTop;
+                    colorObjects.Add(new colorObject(pReal.X,pReal.Y,z, color,contours.BoundingRectangle));
+
+                    // detect the chessboard
+                    Gray_Frame = img.Convert<Gray, Byte>();//
                 }
             }
         }
 
         public void recognizeBoard(Image<Bgr, byte> img)
         {
-            imagecolor = img;
+            imageColor = img;
             //joinContour.Clear();
             Image<Bgr, Byte> smoothImg = img.SmoothGaussian(5, 5, 1.5, 1.5);
             Image<Gray, Byte> smoothedBlackMask = GetColorPixelMask(smoothImg, 0, 180, 0, 94, 0, 100);
@@ -238,80 +236,41 @@ namespace MultiFaceRec
             //   0
             // 1   2
             //   4
-            if (boardtype ==1)
+            do
             {
-                do
+                swapped = false;
+                for (int i = 0; i < 3; i++)
                 {
-                    swapped = false;
-                    for (int i = 0; i < 3; i++)
+                    if (pointBlack[i].Y > pointBlack[i + 1].Y)
                     {
-                        if (pointBlack[i].Y > pointBlack[i + 1].Y)
-                        {
-                            temp = pointBlack[i];
-                            tempbox = minBoxesBlack[i];
+                        temp = pointBlack[i];
+                        tempbox = minBoxesBlack[i];
 
-                            pointBlack[i] = pointBlack[i + 1];
-                            minBoxesBlack[i] = minBoxesBlack[i + 1];
+                        pointBlack[i] = pointBlack[i + 1];
+                        minBoxesBlack[i] = minBoxesBlack[i + 1];
 
-                            pointBlack[i + 1] = temp;
-                            minBoxesBlack[i + 1] = tempbox;
-                            swapped = true;
-                        }
+                        pointBlack[i + 1] = temp;
+                        minBoxesBlack[i + 1] = tempbox;
+                        swapped = true;
                     }
-                } while (swapped);
-
-                if (pointBlack[1].X > pointBlack[2].X)
-                {
-                    temp = pointBlack[1];
-                    tempbox = minBoxesBlack[1];
-                    pointBlack[1] = pointBlack[2];
-                    minBoxesBlack[1] = minBoxesBlack[2];
-                    pointBlack[2] = temp;
-                    minBoxesBlack[2] = tempbox;
                 }
-            }
-            else if (boardtype == 0)
+            } while (swapped);
+
+            if (pointBlack[1].X > pointBlack[2].X)
             {
-                do
-                {
-                    swapped = false;
-                    for (int i = 0; i < 4; i++)
-                    {
-                        if (pointBlack[i].Y > pointBlack[i + 1].Y)
-                        {
-                            temp = pointBlack[i];
-                            tempbox = minBoxesBlack[i];
-
-                            pointBlack[i] = pointBlack[i + 1];
-                            minBoxesBlack[i] = minBoxesBlack[i + 1];
-
-                            pointBlack[i + 1] = temp;
-                            minBoxesBlack[i + 1] = tempbox;
-                            swapped = true;
-                        }
-                    }
-                } while (swapped);
-
-                if (pointBlack[0].X > pointBlack[1].X)
-                {
-                    temp = pointBlack[1];
-                    tempbox = minBoxesBlack[1];
-                    pointBlack[1] = pointBlack[2];
-                    minBoxesBlack[1] = minBoxesBlack[2];
-                    pointBlack[2] = temp;
-                    minBoxesBlack[2] = tempbox;
-                }
-                if (pointBlack[4].X > pointBlack[3].X)
-                {
-                    temp = pointBlack[1];
-                    tempbox = minBoxesBlack[1];
-                    pointBlack[1] = pointBlack[2];
-                    minBoxesBlack[1] = minBoxesBlack[2];
-                    pointBlack[2] = temp;
-                    minBoxesBlack[2] = tempbox;
-                }
+                temp = pointBlack[1];
+                tempbox = minBoxesBlack[1];
+                pointBlack[1] = pointBlack[2];
+                minBoxesBlack[1] = minBoxesBlack[2];
+                pointBlack[2] = temp;
+                minBoxesBlack[2] = tempbox;
             }
-            MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_PLAIN, 0.8, 0.8);            
+            MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_PLAIN, 0.8, 0.8);
+            //for (int i=0; i < 4; i++)
+            //{
+            //    imageGray.Draw("    " + i, ref f, new Point((int)pointBlack[i].X, (int)pointBlack[i].Y), new Gray(200));
+            //    imageGray.Draw(minBoxesBlack[i], new Gray(100), 2);
+            //}
             LineSegment2DF[] lines = new LineSegment2DF[9];
 
 
@@ -346,31 +305,17 @@ namespace MultiFaceRec
 
         public void RecognizeColorObject(Image<Bgr, byte> img)
         {
-            colorObjects.Clear();
+            imageColor = img;
             Image<Bgr, Byte> smoothImg = img.SmoothGaussian(5, 5, 1.5, 1.5);
-            Image<Gray, Byte> smoothedBlueMask = GetColorPixelMask(smoothImg, 0, 180, 0, 94, 0, 100);            
 
-            //Use Dilate followed by Erode to eliminate small gaps in some countour.
-            smoothedBlueMask._Dilate(1);
-            smoothedBlueMask._Erode(1);
-            CvInvoke.cvAnd(smoothedBlueMask, imageSelector, smoothedBlueMask, IntPtr.Zero);
-
-            using (Image<Gray, Byte> canny = smoothedBlueMask.Canny(new Gray(100), new Gray(50)))//Canny(100,50))
-            using (MemStorage stor = new MemStorage())
-            {
-                Contour<Point> contours = canny.FindContours(
-                   Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_SIMPLE,
-                   Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_TREE,
-                   stor);
-                FindColoredObject(img, contours, 0);
-            }
-
-            Image<Gray, Byte> smoothedPurpleMask = GetColorPixelMask(smoothImg, 0, 180, 0, 94, 0, 100);
+            colorObjects.Clear();
+            Image<Gray, Byte> smoothedPurpleMask = GetColorPixelMask(smoothImg, 140, 156, 155, 225, 100, 255);
 
             //Use Dilate followed by Erode to eliminate small gaps in some countour.
             smoothedPurpleMask._Dilate(1);
             smoothedPurpleMask._Erode(1);
-            CvInvoke.cvAnd(smoothedPurpleMask, imageSelector, smoothedPurpleMask, IntPtr.Zero);
+            //CvInvoke.cvAnd(smoothedPurpleMask, imageSelector, smoothedPurpleMask, IntPtr.Zero);
+            imageGray = smoothedPurpleMask;
 
             using (Image<Gray, Byte> canny = smoothedPurpleMask.Canny(new Gray(100), new Gray(50)))//Canny(100,50))
             using (MemStorage stor = new MemStorage())
@@ -381,6 +326,27 @@ namespace MultiFaceRec
                    stor);
                 FindColoredObject(img, contours, 1);
             }
+            colorObjects.ToString();
+
+            
+            Image<Gray, Byte> smoothedGreenMask = GetColorPixelMask(smoothImg, 44, 71, 80, 190, 100, 255);
+            
+            //Use Dilate followed by Erode to eliminate small gaps in some countour.
+            smoothedGreenMask._Dilate(1);
+            smoothedGreenMask._Erode(1);
+            //CvInvoke.cvAnd(smoothedBlueMask, imageSelector, smoothedBlueMask, IntPtr.Zero);
+
+            using (Image<Gray, Byte> canny = smoothedGreenMask.Canny(new Gray(100), new Gray(50)))//Canny(100,50))
+            using (MemStorage stor = new MemStorage())
+            {
+                Contour<Point> contours = canny.FindContours(
+                   Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_SIMPLE,
+                   Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_TREE,
+                   stor);
+                FindColoredObject(img, contours, 0);
+            }
+
+            
         }
 
         protected override void DisposeObject()
@@ -394,19 +360,19 @@ namespace MultiFaceRec
             center.Y = (rec.Top + rec.Bottom) / 2;
             return center;
         }
-        
 
-        
+
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="real">in cm</param>
-        /// <param name="img">in pixel</param>
+        /// <param name="real">length of real, in cm</param>
+        /// <param name="img">length in pixel</param>
+        /// <param name="dDefault"></param>
         /// <returns></returns>
-        private float zCalc(float real, float img, float dpp)
+        private float zCalc(float real, float img, float dDefault)
         {
             float z=0;
-            z = (float)real * (float)dppTop/img;
+            z = (float)real * (float)dDefault / img;
             return z;
         }
 
@@ -415,6 +381,12 @@ namespace MultiFaceRec
             double area;
             area = size.Width * size.Height;
             return area;
+        }
+        public colorObject ImageToNaoCameraFrame(colorObject p)
+        {
+            colorObject n = new colorObject(p.z, -p.x, p.y, p.color, p.rect);
+
+            return n;
         }
     }
 }

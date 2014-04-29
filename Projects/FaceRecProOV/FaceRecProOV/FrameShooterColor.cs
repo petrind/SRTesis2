@@ -236,9 +236,9 @@ namespace MultiFaceRec
             {
                 try
                 {
-                    float dy = -(DisDetector.colorObjects[0].point.X ) / 100;
-                    float dx = (DisDetector.z - 50) / 100;
-                    mc.sendMoveTo(dx, dy, 0);
+                    //float dy = -(DisDetector.colorObjects[0].point.X ) / 100;
+                    //float dx = (DisDetector.z - 50) / 100;
+                    //mc.sendMoveTo(dx, dy, 0);
                 }
                 catch
                 {

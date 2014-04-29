@@ -65,3 +65,15 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.Properties.Resources.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\bin\Debug\NAOServer2.exe.config
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.pdb
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\MainWindow.baml
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\MainWindow.g.cs
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\App.g.cs
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2_Content.g.cs
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2_MarkupCompile.cache
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.g.resources
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\NAOServer2.Properties.Resources.resources
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\labkom\Documents\Visual Studio 2010\SRTesis2\Projects\NAOServer2\NAOServer2\obj\x86\Debug\GenerateResource.write.1.tlog
