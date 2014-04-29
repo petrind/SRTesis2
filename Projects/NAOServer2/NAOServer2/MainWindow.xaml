@@ -11,8 +11,8 @@ Click="connectButton_Click"/>
 Margin="126,203,0,0" VerticalAlignment="Top" Width="139" Height="70" 
 Click="disconnectButton_Click"/>
         <TextBox x:Name="ipBox" HorizontalAlignment="Left" Height="23" 
-Margin="175,78,0,0" TextWrapping="Wrap" Text="192.168.0.100" VerticalAlignment="Top" 
-Width="90" MaxLines="1" MaxLength="15"/>
+Margin="175,78,0,0" TextWrapping="Wrap" Text="167.205.66.109" VerticalAlignment="Top" 
+Width="90" MaxLines="1" MaxLength="15" TextChanged="ipBox_TextChanged" />
         
         <Label Content="NAO IP:" HorizontalAlignment="Left" Margin="121,75,0,0" 
 VerticalAlignment="Top"/>

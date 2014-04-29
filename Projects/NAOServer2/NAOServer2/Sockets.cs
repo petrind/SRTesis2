@@ -76,6 +76,7 @@ namespace RedCorona.Net
             StringCode = 0x00000020,
             CommandCode = 0x00000100,
             moveToCode = 0x00000101,
+            movePeonCode = 0x00000102,
             VoiceCode = 0x00000200;
         //code for Command
         public static string headLeft = "left",

@@ -62,8 +62,8 @@ namespace NAOserver
         /// </summary> 
         public MainWindow() 
         { 
-            InitializeComponent(); 
- 
+            InitializeComponent();
+            disconnectButton.IsEnabled = false;
             // call the Camera constuctor, and set the image format to 320x240  
             naoCam = new Camera(); 
  
@@ -88,26 +88,8 @@ namespace NAOserver
         /// <param name="sender"> object that created the event </param> 
         /// <param name="e"> any addtional arguments </param> 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) 
-        { 
-            if(appServer!=null)
-            appServer.Stop(); // stop the websocket 
-            
-            try
-            {
-                // disconnect from camera and stop the timer 
-                naoMotion.Disconnect();
-                naoCam.Disconnect();
-                naoAudio.Disconnect();
-                dispatcherTimer.Stop();
-            }
-            catch (Exception ex)
-            {
-                isCamInitialized = false;
-
-                // display error message and write exceptions to a file 
-                MessageBox.Show("Exception occurred in closing, error log in C:\\NAOserver\\exception.txt");
-                System.IO.File.WriteAllText(@"C:\\NAOserver\\exception.txt", ex.ToString());
-            }
+        {
+            disconnect();
         } 
  
         /// <summary> 
@@ -138,6 +120,9 @@ namespace NAOserver
                     MessageBox.Show("Nao Connected");
                 else
                     MessageBox.Show("NAO not Connected, sending dummy image");
+
+                connectButton.IsEnabled = false;
+                disconnectButton.IsEnabled = true;
             }
             catch (Exception ex)
             {
@@ -156,13 +141,24 @@ namespace NAOserver
         /// <param name="sender"> object that created the event </param> 
         /// <param name="e"> any additional arguments </param> 
         private void disconnectButton_Click(object sender, RoutedEventArgs e) 
-        { 
+        {
+            disconnect();
+            MessageBox.Show("Disconnected");
+        }
+
+        public void disconnect()
+        {
             // disconnect from camera and stop the timer 
             dispatcherTimer.Stop();
+            connectButton.IsEnabled = true;
+            disconnectButton.IsEnabled = false;
+            ss.disconnect();
             try
             {
                 naoAudio.Disconnect();
                 naoCam.Disconnect();
+                naoMotion.Disconnect();
+
             }
             catch (Exception ex)
             {
@@ -170,11 +166,10 @@ namespace NAOserver
                 MessageBox.Show("Exception occurred in disconnection, error log in C:\\NAOserver\\exception.txt");
                 System.IO.File.WriteAllText(@"C:\\NAOserver\\exception.txt", ex.ToString());
             }
-             
-            if(appServer!=null)
-            appServer.Stop(); 
-            MessageBox.Show("Disconnected"); 
-        } 
+
+            if (appServer != null)
+                appServer.Stop(); 
+        }
  
         /// <summary> 
         /// Sends a new jpg through the websocket 
@@ -220,9 +215,9 @@ namespace NAOserver
                         }
                         //commented to make broadcast raw data
                         if (imageUpperBytes != null) // if the image isnt empty create a bitmap and send via websocket 
-                            imageBitmapUpper = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageUpperBytes, currentFormat.width * 3); 
+                            imageBitmapUpper = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageUpperBytes, currentFormat.width * 3);
                         else
-                            imageBitmapUpper = new BitmapImage(new Uri(String.Format("{0}/Petrus.jpg", curDir)));
+                            imageBitmapUpper = new BitmapImage(new Uri("C:\\monitor_photo_peon_modified.jpg"));//new Uri(String.Format("{0}/Petrus.jpg", curDir)));
                         ////lower image handler - Not Worked
                         //if (imageLowerBytes != null) // if the image isnt empty create a bitmap and send via websocket 
                         //    imageBitmapLower = BitmapSource.Create(currentFormat.width, currentFormat.height, 96, 96, PixelFormats.Bgr24, BitmapPalettes.WebPalette, imageLowerBytes, currentFormat.width * 3);
@@ -549,6 +544,14 @@ namespace NAOserver
                     naoMotion.moveTo(float.Parse(value[0]), float.Parse(value[1]), float.Parse(value[2]));
                     ci.SendMessage(ClientInfo.VoiceCode, Encoding.UTF8.GetBytes(code.ToString("X8") + " success"));
                 }
+                else if (code == ClientInfo.movePeonCode)
+                {
+                    Console.WriteLine("Message length, code " + code.ToString("X8") + ", content:" + buf.ToString());
+
+                    string[] value = System.Text.Encoding.UTF8.GetString(buf, 0, len).Split(',');
+                    naoMotion.movePeon(float.Parse(value[0]), float.Parse(value[1]), float.Parse(value[2]), float.Parse(value[3]), float.Parse(value[4]), float.Parse(value[5]));
+                    ci.SendMessage(ClientInfo.movePeonCode, Encoding.UTF8.GetBytes(code.ToString("X8") + " success"));
+                }
             }
             public void BroadcastString(String text)
             {
@@ -575,12 +578,23 @@ namespace NAOserver
             {
                 return server.count();
             }
+            public void disconnect()
+            {
+                server.Close();
+                server = null;
+            }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             naoMotion.moveTo(1f, 1f, 0);
         }
+
+        private void ipBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+        
     }
     
 
