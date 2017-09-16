@@ -1,8 +1,4 @@
-﻿/** 
- * This software was developed by Austin Hughes 
- * Last Modified: 2013‐07‐16 
- */ 
- 
+
 using System; 
 using System.IO; 
 using System.Windows; 
